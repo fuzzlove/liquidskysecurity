@@ -17,7 +17,6 @@ Update these first:
 - Brand name: `LiquidSky Network Security`
 - Legal name: `LiquidSky Network Security, LLC`
 - Email: replace `security@liquidskysecurity.com` in `index.html` and `script.js` if needed
-- Phone: replace `(972) 503-9743` and `+19725039743` if needed
 - LinkedIn: replace `https://www.linkedin.com/in/j-mcpeters/` if needed
 - GitHub: replace `https://github.com/fuzzlove` if needed
 - OSCP credential: replace `https://www.credly.com/badges/351bd31d-dcf7-4f51-bd25-4d3cb767d333` if needed
