@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- EDIT: Replace the domain and contact details with your final production values. -->
+    <title>LiquidSky Network Security | Offensive Security. Practical Protection.</title>
+    <meta
+      name="description"
+      content="OSCP, OSWE, and OSWA-certified security research for businesses that need real-world vulnerability testing, clear remediation, and affordable protection before attackers find the gaps."
+    />
+    <meta name="author" content="LiquidSky Network Security, LLC" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://liquidskysecurity.com/" />
+
+    <meta property="og:title" content="LiquidSky Network Security | Offensive Security. Practical Protection." />
+    <meta
+      property="og:description"
+      content="OSCP, OSWE, and OSWA-certified security research for real-world vulnerability testing, clear remediation, and affordable protection."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://liquidskysecurity.com/" />
+    <meta property="og:image" content="https://liquidskysecurity.com/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--
+      EDIT QUICK SETTINGS:
+      Brand name: LiquidSky Network Security
+      Legal name: LiquidSky Network Security, LLC
+      Email: replace security@liquidskysecurity.com in this file and script.js
+      Phone: replace (972) 503-9743 if needed
+      LinkedIn: replace https://www.linkedin.com/in/j-mcpeters/ if needed
+      GitHub: replace https://github.com/fuzzlove if needed
+      Service area: replace "Remote across the U.S. | Local onsite by request"
+      Pricing: replace "Starting at" / "Request quote" copy in the packages section
+    -->
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <nav class="nav container" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="LiquidSky Network Security home">
+          <span class="brand-mark" aria-hidden="true">LS</span>
+          <span>
+            <strong>LiquidSky Network Security</strong>
+            <small>Offensive Security. Practical Protection.</small>
+          </span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-links" data-nav-links>
+          <a href="#services">Services</a>
+          <a href="#packages">Packages</a>
+          <a href="#process">Process</a>
+          <a href="#contact">Contact</a>
+          <a class="nav-cta" href="#contact">Request Review</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <canvas class="hero-canvas" data-hero-canvas aria-hidden="true"></canvas>
+        <div class="hero-grid container">
+          <div class="hero-copy reveal">
+            <p class="eyebrow"><span class="pulse-dot"></span> LiquidSky Network Security</p>
+            <h1 id="hero-title">Offensive Security. Practical Protection.</h1>
+            <p class="hero-subtitle">
+              OSCP, OSWE, and OSWA-certified security research for businesses that need real-world vulnerability
+              testing, clear remediation, and affordable protection before attackers find the gaps.
+            </p>
+            <div class="hero-actions" aria-label="Primary calls to action">
+              <a class="button button-primary" href="#contact">Request a Security Review</a>
+              <a class="button button-secondary" href="#services">View Services</a>
+              <a class="button button-ghost" href="mailto:security@liquidskysecurity.com?subject=Security%20Review%20Request">Contact Now</a>
+            </div>
+            <dl class="hero-metrics" aria-label="Security credentials">
+              <div>
+                <dt>6+</dt>
+                <dd>Years hands-on</dd>
+              </div>
+              <div>
+                <dt>300+</dt>
+                <dd>Tests and engagements</dd>
+              </div>
+              <div>
+                <dt>3</dt>
+                <dd>OffSec certs</dd>
+              </div>
+              <div>
+                <dt>CVE</dt>
+                <dd>Credited work</dd>
+              </div>
+            </dl>
+          </div>
+
+          <aside class="terminal-panel reveal" aria-label="Security review preview">
+            <div class="terminal-bar">
+              <span></span>
+              <span></span>
+              <span></span>
+              <strong>review.scope</strong>
+            </div>
+            <div class="terminal-body">
+              <p><span>$</span> start-security-review --business local</p>
+              <p class="muted">checking web exposure, accounts, devices, MFA, cloud settings...</p>
+              <p><span>+</span> manual testing for auth, access control, session risk</p>
+              <p><span>+</span> clear findings mapped to priority fixes</p>
+              <p><span>+</span> hands-on remediation guidance</p>
+              <div class="scan-line" aria-hidden="true"></div>
+              <p class="success">status: ready for discovery call</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="credibility" aria-label="Credentials and trust signals">
+        <div class="container credibility-track">
+          <span>OSCP</span>
+          <span>OSWE</span>
+          <span>OSWA</span>
+          <span>Bug Bounty Hunter</span>
+          <span>CVE Acknowledged</span>
+          <span>300+ Successful Tests</span>
+          <span>Security Researcher</span>
+          <a href="https://www.linkedin.com/in/j-mcpeters/" target="_blank" rel="noopener noreferrer">LinkedIn Credentials</a>
+          <a href="https://github.com/fuzzlove" target="_blank" rel="noopener noreferrer">GitHub Portfolio</a>
+        </div>
+      </section>
+
+      <section class="section" id="services" aria-labelledby="services-title">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Services</p>
+            <h2 id="services-title">Focused security help without enterprise overhead</h2>
+            <p>
+              Practical assessments, hardening, triage, and automation for teams that need useful answers quickly.
+            </p>
+          </div>
+
+          <div class="service-grid">
+            <article class="service-card reveal">
+              <span class="card-icon">01</span>
+              <h3>Web Application Security Testing</h3>
+              <p>Manual review of apps, dashboards, login flows, APIs, and user-facing workflows.</p>
+            </article>
+            <article class="service-card reveal">
+              <span class="card-icon">02</span>
+              <h3>Vulnerability Assessment</h3>
+              <p>Targeted discovery of exposed services, common weaknesses, and practical risk.</p>
+            </article>
+            <article class="service-card reveal">
+              <span class="card-icon">03</span>
+              <h3>Bug Bounty-Style Security Review</h3>
+              <p>Creative offensive testing focused on the issues automated scanners usually miss.</p>
+            </article>
+            <article class="service-card reveal">
+              <span class="card-icon">04</span>
+              <h3>Small Business Cybersecurity Audit</h3>
+              <p>Email, accounts, devices, router, cloud tools, passwords, MFA, and recovery posture.</p>
+            </article>
+            <article class="service-card reveal">
+              <span class="card-icon">05</span>
+              <h3>macOS Security Audit</h3>
+              <p>Device configuration, app permissions, persistence checks, privacy settings, and hardening.</p>
+            </article>
+            <article class="service-card reveal">
+              <span class="card-icon">06</span>
+              <h3>iOS / Mobile Security Research Consulting</h3>
+              <p>Mobile app research, platform risk guidance, and practical review for sensitive workflows.</p>
+            </article>
+            <article class="service-card reveal">
+              <span class="card-icon">07</span>
+              <h3>Phishing & Account Security Hardening</h3>
+              <p>MFA, password manager rollout, recovery checks, domain email protections, and staff guidance.</p>
+            </article>
+            <article class="service-card reveal">
+              <span class="card-icon">08</span>
+              <h3>Incident Triage / “I Think I’ve Been Hacked” Help</h3>
+              <p>Urgent review of suspicious activity with containment recommendations and next steps.</p>
+            </article>
+            <article class="service-card reveal">
+              <span class="card-icon">09</span>
+              <h3>Secure Setup for Local Businesses</h3>
+              <p>Baseline protection for shops, offices, repair counters, and service businesses.</p>
+            </article>
+            <article class="service-card reveal">
+              <span class="card-icon">10</span>
+              <h3>Security Automation & Custom Scripts</h3>
+              <p>Small tools that reduce repetitive checks, improve visibility, and make security easier to maintain.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section split-section" id="who" aria-labelledby="who-title">
+        <div class="container split-grid">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Who I Help</p>
+            <h2 id="who-title">Built for people who need real security, not a sales funnel</h2>
+            <p>
+              Clear support for small teams, independent operators, and technical builders who need a skilled security
+              researcher they can actually reach.
+            </p>
+          </div>
+          <div class="audience-list reveal" aria-label="Client types">
+            <span>Small businesses</span>
+            <span>Startups</span>
+            <span>Local shops</span>
+            <span>Phone and computer repair shops</span>
+            <span>Creators and online businesses</span>
+            <span>Developers launching apps</span>
+            <span>People who suspect compromise</span>
+            <span>Teams needing affordable practical security</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="packages" aria-labelledby="packages-title">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Starter Packages</p>
+            <h2 id="packages-title">Simple ways to start</h2>
+            <p>Choose a starting point. Scope and quote are finalized after a short discovery call.</p>
+          </div>
+
+          <div class="package-grid">
+            <article class="package-card reveal">
+              <p class="package-label">Affordable first step</p>
+              <h3>Starter Security Check</h3>
+              <p class="package-price">Starting at request quote</p>
+              <ul>
+                <li>Website and account security review</li>
+                <li>Basic vulnerability scan</li>
+                <li>Written findings</li>
+                <li>Priority fixes</li>
+              </ul>
+              <a class="button button-secondary" href="#contact">Ask about this</a>
+            </article>
+            <article class="package-card featured reveal">
+              <p class="package-label">For apps, dashboards, portals, and login systems</p>
+              <h3>Web App Review</h3>
+              <p class="package-price">Starting at request quote</p>
+              <ul>
+                <li>Manual testing</li>
+                <li>OWASP Top 10 review</li>
+                <li>Auth and session checks</li>
+                <li>Report with remediation</li>
+              </ul>
+              <a class="button button-primary" href="#contact">Request review</a>
+            </article>
+            <article class="package-card reveal">
+              <p class="package-label">For local businesses</p>
+              <h3>Small Business Cyber Audit</h3>
+              <p class="package-price">Starting at request quote</p>
+              <ul>
+                <li>Device, account, email, router, and cloud review</li>
+                <li>Password and MFA review</li>
+                <li>Risk report</li>
+                <li>Practical hardening plan</li>
+              </ul>
+              <a class="button button-secondary" href="#contact">Start audit</a>
+            </article>
+            <article class="package-card reveal">
+              <p class="package-label">For urgent security concerns</p>
+              <h3>Emergency Triage</h3>
+              <p class="package-price">Request quote</p>
+              <ul>
+                <li>Suspicious activity review</li>
+                <li>Account, device, and network checklist</li>
+                <li>Containment recommendations</li>
+                <li>Clear next steps</li>
+              </ul>
+              <a class="button button-secondary" href="#contact">Get help</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section why-section" id="why" aria-labelledby="why-title">
+        <div class="container why-grid">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Why Hire Me</p>
+            <h2 id="why-title">Offensive security judgment, translated into practical fixes</h2>
+            <p>
+              You get hands-on research experience without fear-based sales or vague scanner output.
+            </p>
+          </div>
+          <div class="why-list">
+            <article class="why-item reveal">
+              <h3>Offensive security mindset</h3>
+              <p>Testing is guided by how real attackers chain mistakes, not just compliance checklists.</p>
+            </article>
+            <article class="why-item reveal">
+              <h3>Real-world research experience</h3>
+              <p>Bug bounty, CVE-credited work, exploit research, and practical assessment experience.</p>
+            </article>
+            <article class="why-item reveal">
+              <h3>Clear reports people can use</h3>
+              <p>Plain-language findings, business impact, proof, and prioritized remediation steps.</p>
+            </article>
+            <article class="why-item reveal">
+              <h3>Affordable options</h3>
+              <p>Scoped services for small businesses, solo founders, and local teams without enterprise pricing.</p>
+            </article>
+            <article class="why-item reveal">
+              <h3>Discovery through remediation</h3>
+              <p>Support does not stop at finding issues. You get guidance on fixing what matters first.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section portfolio-section" aria-labelledby="portfolio-title">
+        <div class="container portfolio-grid reveal">
+          <div>
+            <p class="eyebrow">Public Research Portfolio</p>
+            <h2 id="portfolio-title">Security research you can inspect</h2>
+            <p>
+              Public GitHub work includes exploit research, web application vulnerability research, macOS security
+              tooling, iOS-focused utilities, and defensive analysis. Prospects can review the work before booking a call.
+            </p>
+            <div class="portfolio-actions">
+              <a class="button button-secondary" href="https://github.com/fuzzlove" target="_blank" rel="noopener noreferrer">View GitHub Portfolio</a>
+              <a class="button button-ghost" href="https://www.linkedin.com/in/j-mcpeters/" target="_blank" rel="noopener noreferrer">View LinkedIn</a>
+            </div>
+          </div>
+          <div class="proof-grid" aria-label="Portfolio proof points">
+            <article>
+              <span>52</span>
+              <h3>Public repositories</h3>
+              <p>Security tooling, research notes, exploit studies, and practical utilities.</p>
+            </article>
+            <article>
+              <span>CVE</span>
+              <h3>Exploit research examples</h3>
+              <p>Public repositories include CVE-labeled vulnerability research and proof-of-concept work.</p>
+            </article>
+            <article>
+              <span>macOS</span>
+              <h3>Security audit tooling</h3>
+              <p>Device-focused audit work for finding risks, suspicious activity, and weak configuration.</p>
+            </article>
+            <article>
+              <span>OWASP</span>
+              <h3>Web testing focus</h3>
+              <p>Portfolio and services align around practical web app testing and remediation.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section process-section" id="process" aria-labelledby="process-title">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">First Call Process</p>
+            <h2 id="process-title">Fast intake, clear scope, useful results</h2>
+          </div>
+          <ol class="process-list">
+            <li class="reveal">
+              <span>01</span>
+              <h3>Submit request</h3>
+              <p>Share the business, asset, concern, urgency, and preferred contact method.</p>
+            </li>
+            <li class="reveal">
+              <span>02</span>
+              <h3>Quick discovery call</h3>
+              <p>Clarify goals, constraints, access needs, and what success looks like.</p>
+            </li>
+            <li class="reveal">
+              <span>03</span>
+              <h3>Scope and quote</h3>
+              <p>Get a focused scope with deliverables, timing, and quote before work begins.</p>
+            </li>
+            <li class="reveal">
+              <span>04</span>
+              <h3>Security review</h3>
+              <p>Testing, audit, triage, or hardening work begins with practical communication.</p>
+            </li>
+            <li class="reveal">
+              <span>05</span>
+              <h3>Findings and fixes</h3>
+              <p>Receive prioritized findings and plain-English remediation support.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section testimonials-section" aria-labelledby="testimonials-title">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Client Signals</p>
+            <h2 id="testimonials-title">Placeholder testimonials</h2>
+            <p>Replace these once you have permission to publish client feedback.</p>
+          </div>
+          <div class="testimonial-grid">
+            <figure class="testimonial-card reveal">
+              <blockquote>“Security review helped us understand our real risks.”</blockquote>
+              <figcaption>Startup founder</figcaption>
+            </figure>
+            <figure class="testimonial-card reveal">
+              <blockquote>“Clear, practical, and easy to understand.”</blockquote>
+              <figcaption>Local business owner</figcaption>
+            </figure>
+            <figure class="testimonial-card reveal">
+              <blockquote>“Found issues automated scans missed.”</blockquote>
+              <figcaption>Engineering lead</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="container contact-grid">
+          <div class="contact-copy reveal">
+            <p class="eyebrow">Request Intake</p>
+            <h2 id="contact-title">Security problems get more expensive the longer they wait.</h2>
+            <p>
+              Send the details once and get a reply with next steps. This intake format is designed so an assistant can
+              review, prioritize, and schedule the right follow-up.
+            </p>
+            <div class="contact-card">
+              <p><strong>Email:</strong> <a href="mailto:security@liquidskysecurity.com">security@liquidskysecurity.com</a></p>
+              <p><strong>Phone:</strong> <a href="tel:+19725039743">(972) 503-9743</a></p>
+              <p>
+                <strong>LinkedIn:</strong>
+                <a href="https://www.linkedin.com/in/j-mcpeters/" target="_blank" rel="noopener noreferrer">linkedin.com/in/j-mcpeters</a>
+              </p>
+              <p>
+                <strong>GitHub:</strong>
+                <a href="https://github.com/fuzzlove" target="_blank" rel="noopener noreferrer">github.com/fuzzlove</a>
+              </p>
+              <p><strong>Service area:</strong> Remote across the U.S. | Local onsite by request</p>
+            </div>
+          </div>
+
+          <form class="intake-form reveal" action="mailto:security@liquidskysecurity.com" method="post" enctype="text/plain" data-intake-form>
+            <div class="form-row">
+              <label for="name">Name</label>
+              <input id="name" name="Name" type="text" autocomplete="name" required />
+            </div>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input id="email" name="Email" type="email" autocomplete="email" required />
+            </div>
+            <div class="form-row">
+              <label for="business">Business / project name</label>
+              <input id="business" name="Business / Project" type="text" autocomplete="organization" />
+            </div>
+            <div class="form-row">
+              <label for="url">Website or app URL</label>
+              <input id="url" name="Website or App URL" type="url" placeholder="https://example.com" />
+            </div>
+            <div class="form-row">
+              <label for="need">What do you need help with?</label>
+              <textarea id="need" name="Need" rows="5" required></textarea>
+            </div>
+            <div class="form-row">
+              <label for="urgency">Urgency level</label>
+              <select id="urgency" name="Urgency" required>
+                <option value="">Select urgency</option>
+                <option>Emergency: active concern today</option>
+                <option>Soon: within 1 week</option>
+                <option>Planned: this month</option>
+                <option>Researching options</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="budget">Budget range</label>
+              <select id="budget" name="Budget Range">
+                <option value="">Select budget</option>
+                <option>Under $500</option>
+                <option>$500 - $1,500</option>
+                <option>$1,500 - $5,000</option>
+                <option>$5,000+</option>
+                <option>Need guidance</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="contact-method">Preferred contact method</label>
+              <select id="contact-method" name="Preferred Contact Method">
+                <option>Email</option>
+                <option>Phone</option>
+                <option>Video call</option>
+                <option>Text first</option>
+              </select>
+            </div>
+            <button class="button button-primary form-submit" type="submit">Request a Review Today</button>
+            <p class="form-note" data-form-note>
+              This form currently opens your email app. Replace the form action later with a backend endpoint.
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand" href="#top" aria-label="LiquidSky Network Security home">
+            <span class="brand-mark" aria-hidden="true">LS</span>
+            <span>
+              <strong>LiquidSky Network Security</strong>
+              <small>Offensive Security. Practical Protection.</small>
+            </span>
+          </a>
+          <p>
+            OSCP, OSWE, and OSWA-certified security research for real-world vulnerability testing, clear remediation,
+            and affordable protection. Legal name: LiquidSky Network Security, LLC.
+          </p>
+        </div>
+        <div class="footer-links" aria-label="Footer links">
+          <a href="#services">Services</a>
+          <a href="#packages">Packages</a>
+          <a href="#process">Process</a>
+          <a href="https://github.com/fuzzlove" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/j-mcpeters/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
