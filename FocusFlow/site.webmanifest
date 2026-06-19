@@ -1,0 +1,16 @@
+{
+  "name": "FocusFlow",
+  "short_name": "FocusFlow",
+  "description": "A calm browser productivity extension for focus planning, tasks, projects, goals, and routines.",
+  "start_url": "/FocusFlow/",
+  "display": "standalone",
+  "background_color": "#f7faf8",
+  "theme_color": "#10202a",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

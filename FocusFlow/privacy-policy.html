@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Privacy Policy | FocusFlow</title>
+    <meta name="description" content="Privacy Policy for FocusFlow, a local-first browser productivity extension.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://liquidskysecurity.com/FocusFlow/privacy-policy.html">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+      (function () {
+        var stored = localStorage.getItem('focusflow-theme');
+        document.documentElement.dataset.theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      })();
+    </script>
+  </head>
+  <body class="legal-page">
+    <header class="site-header">
+      <nav class="nav shell" aria-label="Main navigation">
+        <a class="brand" href="index.html">
+          <img src="assets/focusflow-mark.svg" width="40" height="40" alt="">
+          <span>FocusFlow</span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html#features">Features</a>
+          <a href="index.html#privacy">Privacy</a>
+          <a href="terms.html">Terms</a>
+        </div>
+      </nav>
+    </header>
+    <main class="shell legal">
+      <p class="eyebrow">Last updated June 19, 2026</p>
+      <h1>Privacy Policy</h1>
+      <p>FocusFlow is designed as a local-first productivity and planning tool. This policy explains the privacy principles for the website and browser extension.</p>
+
+      <h2>Information Stored by FocusFlow</h2>
+      <p>Tasks, projects, goals, routines, settings, and extension preferences are intended to be stored locally in your browser unless a future feature clearly states otherwise.</p>
+
+      <h2>No Data Selling</h2>
+      <p>FocusFlow does not sell your personal information. The product is not built around advertising profiles or data resale.</p>
+
+      <h2>Tracking</h2>
+      <p>FocusFlow does not use tracking by default. If analytics or optional diagnostics are introduced later, they should be clearly disclosed and controlled by user settings.</p>
+
+      <h2>Export and Backup</h2>
+      <p>FocusFlow may provide export and backup tools so you can keep your planning data portable. Exported files are your responsibility once downloaded or moved outside the extension.</p>
+
+      <h2>Website Links</h2>
+      <p>The website links to third-party services such as GitHub, Patreon, and Buy Me A Coffee. Their privacy practices are governed by their own policies.</p>
+
+      <h2>Contact</h2>
+      <p>For privacy questions, contact <a href="mailto:hello@liquidskysecurity.com">hello@liquidskysecurity.com</a>.</p>
+    </main>
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div><a class="brand" href="index.html"><img src="assets/focusflow-mark.svg" width="36" height="36" alt=""><span>FocusFlow</span></a><p>Made by Joe M</p></div>
+        <nav aria-label="Footer links"><a href="index.html">Home</a><a href="terms.html">Terms</a><a href="mailto:hello@liquidskysecurity.com">Contact</a></nav>
+      </div>
+    </footer>
+    <script src="app.js" defer></script>
+  </body>
+</html>
