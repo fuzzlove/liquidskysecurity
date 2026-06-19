@@ -3,17 +3,11 @@
   var themeButtons = document.querySelectorAll('[data-theme-choice]');
   var nav = document.querySelector('.nav');
   var menuToggle = document.querySelector('.menu-toggle');
-  var galleryButtons = document.querySelectorAll('[data-shot]');
-  var shotTitle = document.getElementById('shot-title');
-  var shotCaption = document.getElementById('shot-caption');
-  var captions = {
-    Dashboard: 'A daily overview with priorities, projects, routines, and progress.',
-    'Focus Mode': 'A dedicated single-task view for calm, deliberate work sessions.',
-    Projects: 'Organize related work without heavy project management overhead.',
-    Goals: 'Connect daily tasks to the longer-term outcomes you want to track.',
-    'Theme Selection': 'Switch between light mode, dark mode, and a softer focus theme.',
-    'Routine Builder': 'Create repeatable checklists for planning, shutdown, study, or deep work.'
-  };
+  var lightbox = document.querySelector('.lightbox');
+  var lightboxImage = lightbox ? lightbox.querySelector('img') : null;
+  var lightboxCaption = lightbox ? lightbox.querySelector('figcaption') : null;
+  var lightboxClose = lightbox ? lightbox.querySelector('.lightbox-close') : null;
+  var lastFocusedElement = null;
 
   function setTheme(theme) {
     root.dataset.theme = theme;
@@ -49,14 +43,38 @@
     });
   }
 
-  galleryButtons.forEach(function (button) {
+  document.querySelectorAll('[data-lightbox-src]').forEach(function (button) {
     button.addEventListener('click', function () {
-      var selected = button.dataset.shot;
-      galleryButtons.forEach(function (tab) {
-        tab.setAttribute('aria-selected', String(tab === button));
-      });
-      if (shotTitle) shotTitle.textContent = selected;
-      if (shotCaption) shotCaption.textContent = captions[selected] || captions.Dashboard;
+      if (!lightbox || !lightboxImage || !lightboxCaption) return;
+      lastFocusedElement = button;
+      lightboxImage.src = button.dataset.lightboxSrc;
+      lightboxImage.alt = button.dataset.lightboxAlt || '';
+      lightboxCaption.textContent = button.dataset.lightboxTitle || '';
+      lightbox.hidden = false;
+      document.body.style.overflow = 'hidden';
+      if (lightboxClose) lightboxClose.focus();
     });
+  });
+
+  function closeLightbox() {
+    if (!lightbox || !lightboxImage) return;
+    lightbox.hidden = true;
+    lightboxImage.removeAttribute('src');
+    document.body.style.overflow = '';
+    if (lastFocusedElement) lastFocusedElement.focus();
+  }
+
+  if (lightboxClose) {
+    lightboxClose.addEventListener('click', closeLightbox);
+  }
+
+  if (lightbox) {
+    lightbox.addEventListener('click', function (event) {
+      if (event.target === lightbox) closeLightbox();
+    });
+  }
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && lightbox && !lightbox.hidden) closeLightbox();
   });
 })();
