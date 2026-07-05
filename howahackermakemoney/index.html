@@ -1497,6 +1497,12 @@ END PHRASES
       document.getElementById("flagImage").src = imageUrl;
       document.getElementById("currentYear").textContent = year;
     })();
+
+    document.addEventListener("contextmenu", function (event) {
+      event.preventDefault();
+
+      alert("The job opportunity states if you are 18 or older you can enter.");
+    });
   </script>
 </body>
 </html>
