@@ -1507,6 +1507,7 @@ END PHRASES
 
       <div class="banner-frame" aria-label="Made in the U.S.A 16 by 11 banner">
         <div class="made-usa-banner">
+          <!-- JavaScript appends an exact local timestamp to this image URL at page load. -->
           <img
             id="flagImage"
             width="16"
@@ -1537,18 +1538,27 @@ END PHRASES
       const month = String(now.getMonth() + 1).padStart(2, "0");
       const day = String(now.getDate()).padStart(2, "0");
 
-      const currentDate = `${year}-${month}-${day}`;
-      const currentDateYear = `${currentDate}-${year}`;
-      const imageUrl = `${baseImageUrl}?=${encodeURIComponent(currentDateYear)}`;
+      const hours = String(now.getHours()).padStart(2, "0");
+      const minutes = String(now.getMinutes()).padStart(2, "0");
+      const seconds = String(now.getSeconds()).padStart(2, "0");
 
-      document.getElementById("flagImage").src = imageUrl;
+      const currentDate = `${year}-${month}-${day}`;
+      const currentTime = `${hours}-${minutes}-${seconds}`;
+      const currentTimestamp = `${currentDate}-${currentTime}-${year}`;
+      const imageUrl = `${baseImageUrl}?=${encodeURIComponent(currentTimestamp)}`;
+
+      const flagImage = document.getElementById("flagImage");
+      flagImage.src = imageUrl;
+      flagImage.dataset.imageTimestamp = currentTimestamp;
+      flagImage.title = `Image timestamp: ${currentTimestamp}`;
+
       document.getElementById("currentYear").textContent = year;
     })();
 
     document.addEventListener("contextmenu", function (event) {
       event.preventDefault();
 
-      alert("The job opportunity states if you are 18 or older you can enter. Otherwise please see free training.");
+      alert("The job opportunity states if you are 18 or older you can enter. Otherwise please see the fine print for free training.");
     });
   </script>
 </body>
