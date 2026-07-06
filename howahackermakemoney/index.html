@@ -17,6 +17,13 @@
       --text-dark: #111827;
       --muted: rgba(255, 255, 255, 0.74);
       --shadow: 0 24px 70px rgba(0, 0, 0, 0.25);
+      --warning: #fde68a;
+      --warning-bg: rgba(251, 191, 36, 0.10);
+      --warning-line: rgba(251, 191, 36, 0.45);
+      --danger: #fecaca;
+      --danger-bg: rgba(239, 68, 68, 0.12);
+      --danger-line: rgba(239, 68, 68, 0.46);
+      --accent: #b9d4ff;
     }
 
     * {
@@ -33,6 +40,10 @@
         radial-gradient(circle at top left, rgba(37, 99, 235, 0.28), transparent 34rem),
         linear-gradient(135deg, #07101f 0%, var(--bg) 55%, #101b32 100%);
       color: var(--text);
+    }
+
+    body.eula-open {
+      overflow: hidden;
     }
 
     .page {
@@ -63,7 +74,7 @@
       padding: 6px 10px;
       border: 1px solid var(--line);
       border-radius: 999px;
-      color: #b9d4ff;
+      color: var(--accent);
       font-size: 0.76rem;
       font-weight: 800;
       letter-spacing: 0.09em;
@@ -90,10 +101,10 @@
       max-width: 680px;
       margin: 0 auto 28px;
       padding: 14px 16px;
-      border: 1px solid rgba(251, 191, 36, 0.45);
+      border: 1px solid var(--warning-line);
       border-radius: 14px;
-      background: rgba(251, 191, 36, 0.10);
-      color: #fde68a;
+      background: var(--warning-bg);
+      color: var(--warning);
       font-size: 0.95rem;
       font-weight: 700;
       line-height: 1.5;
@@ -106,54 +117,10 @@
     }
 
     .age-advisory a {
-      color: #fde68a;
+      color: var(--warning);
       font-weight: 900;
       text-decoration: none;
       border-bottom: 1px solid rgba(253, 230, 138, 0.75);
-    }
-
-    .age-advisory a:hover,
-    .age-advisory a:focus {
-      color: #ffffff;
-      border-bottom-color: #ffffff;
-      outline: none;
-    }
-
-
-    .minor-training {
-      max-width: 680px;
-      margin: -16px auto 28px;
-      color: rgba(255, 255, 255, 0.68);
-      font-size: 0.78rem;
-      line-height: 1.55;
-      text-align: center;
-    }
-
-    .minor-training strong {
-      color: rgba(255, 255, 255, 0.86);
-      font-weight: 800;
-    }
-
-    .minor-training a {
-      color: #b9d4ff;
-      font-weight: 700;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(185, 212, 255, 0.55);
-    }
-
-    .minor-training a:hover,
-    .minor-training a:focus {
-      color: #ffffff;
-      border-bottom-color: #ffffff;
-      outline: none;
-    }
-
-    .minor-training .training-links {
-      display: inline-flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 6px 10px;
-      margin-top: 6px;
     }
 
     .banner-frame {
@@ -207,15 +174,427 @@
       font-weight: 800;
     }
 
-    @media (max-width: 560px) {
+    .eula-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: rgba(3, 7, 18, 0.88);
+      backdrop-filter: blur(18px);
+    }
+
+    .eula-overlay[hidden] {
+      display: none;
+    }
+
+    .eula-dialog {
+      width: min(920px, 100%);
+      max-height: min(86vh, 860px);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 24px;
+      background: #0b1220;
+      color: #ffffff;
+      box-shadow: 0 34px 120px rgba(0, 0, 0, 0.55);
+    }
+
+    .eula-header {
+      padding: 26px 28px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .eula-kicker {
+      margin-bottom: 10px;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+    }
+
+    .eula-header h2 {
+      margin: 0;
+      font-size: clamp(1.5rem, 3vw, 2.6rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .eula-header p,
+    .eula-section p,
+    .eula-section ul {
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .eula-body {
+      padding: 24px 28px;
+      overflow: auto;
+    }
+
+    .eula-alert {
+      margin-bottom: 20px;
+      padding: 14px 16px;
+      border: 1px solid var(--danger-line);
+      border-radius: 14px;
+      background: var(--danger-bg);
+      color: var(--danger);
+      font-weight: 900;
+      line-height: 1.55;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .eula-section {
+      padding: 18px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.10);
+      text-align: left;
+    }
+
+    .eula-section:first-of-type {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .eula-section h3 {
+      margin: 0 0 10px;
+      font-size: 1rem;
+    }
+
+    .eula-section p {
+      margin: 0;
+    }
+
+    .eula-section ul {
+      margin: 10px 0 0;
+      padding-left: 20px;
+    }
+
+    .eula-section li + li {
+      margin-top: 6px;
+    }
+
+    .eula-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 20px;
+      padding: 14px 16px;
+      border: 1px solid rgba(147, 197, 253, 0.34);
+      border-radius: 14px;
+      background: rgba(147, 197, 253, 0.08);
+      color: #dbeafe;
+      text-align: left;
+    }
+
+    .eula-check input {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      accent-color: #93c5fd;
+      flex: 0 0 18px;
+    }
+
+    .eula-check label {
+      font-weight: 750;
+      line-height: 1.55;
+      cursor: pointer;
+    }
+
+    .eula-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: flex-end;
+      padding: 18px 28px 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(0, 0, 0, 0.18);
+    }
+
+    .btn {
+      border: 1px solid transparent;
+      border-radius: 12px;
+      padding: 12px 16px;
+      font: inherit;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: #dbeafe;
+      color: #0b1220;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .btn[disabled] {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .eula-small {
+      margin-top: 12px;
+      color: rgba(255, 255, 255, 0.56);
+      font-size: 0.82rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        width: min(100% - 20px, 960px);
+        padding: 28px 0;
+      }
+
       .card {
         padding: 24px 18px;
+      }
+
+      .eula-overlay {
+        padding: 12px;
+      }
+
+      .eula-header,
+      .eula-body,
+      .eula-actions {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .eula-actions {
+        justify-content: stretch;
+      }
+
+      .btn {
+        width: 100%;
       }
     }
   </style>
 </head>
-<body>
 
+<body class="eula-open">
+  <div id="eulaOverlay" class="eula-overlay" role="dialog" aria-modal="true" aria-labelledby="eulaTitle" aria-describedby="eulaSummary">
+    <section class="eula-dialog">
+      <header class="eula-header">
+        <div class="eula-kicker">End User License Agreement</div>
+        <h2 id="eulaTitle">Legal Use Notice and Site Access Agreement</h2>
+        <p id="eulaSummary">
+          Before entering Ethical Typos, you must confirm that you are at least 18 years old
+          and that you will use this site only for lawful, educational, defensive, and authorized cybersecurity purposes.
+        </p>
+      </header>
+
+      <div class="eula-body">
+        <div class="eula-alert">
+          DO NOT BREAK THE LAW. Do not use this site, its content, its redirect phrases,
+          or any related materials to violate the laws of the United States of America.
+        </div>
+
+        <section class="eula-section">
+          <h3>1. Age Requirement</h3>
+          <p>
+            You must be 18 years of age or older to enter, access, or use this site.
+            If you are not 18 years of age or older, do not enter or use this site.
+          </p>
+        </section>
+
+        <section class="eula-section">
+          <h3>2. Lawful and Authorized Use Only</h3>
+          <p>
+            Ethical Typos is provided for lawful cybersecurity education, safety redirection,
+            defensive awareness, responsible research, and authorized security work only.
+            You agree not to use this site for any unlawful purpose.
+          </p>
+        </section>
+
+        <section class="eula-section">
+          <h3>3. Prohibited Conduct</h3>
+          <p>You must not use this site, its code, its phrase lists, or its content to:</p>
+          <ul>
+            <li>Access, attempt to access, scan, attack, or test any computer, account, network, application, or service without explicit authorization.</li>
+            <li>Steal, harvest, solicit, trade, or misuse passwords, cookies, tokens, sessions, private messages, personal data, financial data, or authentication material.</li>
+            <li>Create, distribute, deploy, advertise, or operate malware, phishing kits, credential stealers, token grabbers, botnets, ransomware, spyware, or unauthorized remote-access tools.</li>
+            <li>Bypass school, employer, parental, platform, network, account, device-management, or access-control restrictions without permission.</li>
+            <li>Harass, threaten, extort, defraud, impersonate, dox, stalk, exploit, or harm any person, organization, system, or service.</li>
+            <li>Encourage, assist, conceal, or enable illegal hacking, fraud, abuse, unauthorized access, or other cybercrime.</li>
+          </ul>
+        </section>
+
+        <section class="eula-section">
+          <h3>4. Authorized Security Research</h3>
+          <p>
+            Security testing must be performed only in systems you own, systems you are expressly authorized to test,
+            legal training labs, CTF environments, or programs with written rules of engagement.
+            You are responsible for obtaining permission before testing and for following all applicable laws,
+            contracts, policies, scope limits, and disclosure requirements.
+          </p>
+        </section>
+
+        <section class="eula-section">
+          <h3>5. No Legal Advice</h3>
+          <p>
+            This EULA and legal notice are not legal advice. Laws, regulations, contracts, and platform rules can vary
+            by jurisdiction and context. Consult a qualified attorney for advice about your specific situation.
+          </p>
+        </section>
+
+        <section class="eula-section">
+          <h3>6. No Warranty</h3>
+          <p>
+            This site is provided “as is” and “as available,” without warranties of any kind.
+            Liquidsky Security does not guarantee that the site will be error-free, uninterrupted,
+            legally sufficient for every jurisdiction, or suitable for any particular use.
+          </p>
+        </section>
+
+        <section class="eula-section">
+          <h3>7. Enforcement and Access Termination</h3>
+          <p>
+            Liquidsky Security may deny, restrict, or terminate access for suspected abuse, unlawful use,
+            policy violations, or attempts to misuse this site. Serious abuse may be preserved, reviewed,
+            or reported to appropriate parties where legally permitted or required.
+          </p>
+        </section>
+
+        <div class="eula-check">
+          <input id="eulaAgreeCheck" type="checkbox" />
+          <label for="eulaAgreeCheck">
+            I am 18 years of age or older, I have read this EULA, and I agree to use this site only for lawful,
+            authorized, educational, defensive, or responsible cybersecurity purposes.
+          </label>
+        </div>
+
+        <p class="eula-small">
+          Acceptance is stored locally in your browser. Clearing browser storage may show this notice again.
+        </p>
+      </div>
+
+      <footer class="eula-actions">
+        <button id="eulaDeclineButton" class="btn btn-secondary" type="button">
+          I Do Not Agree
+        </button>
+        <button id="eulaAcceptButton" class="btn btn-primary" type="button" disabled>
+          I Agree — Enter Site
+        </button>
+      </footer>
+    </section>
+  </div>
+
+  <main class="page">
+    <section class="card" aria-label="Ethical Typos Made in the U.S.A page">
+      <div class="eyebrow">Public Safety Redirect</div>
+
+      <h1>Ethical Typos</h1>
+
+      <p class="lede">
+        A clean redirect surface for typo-aware safety guidance, youth-positive messaging,
+        and responsible online search intervention.
+      </p>
+
+      <div class="age-advisory" role="alert" aria-label="Age advisory">
+        <strong>Advisory:</strong>
+        <a href="https://www.usajobs.gov/job/847989800" target="_blank" rel="noopener noreferrer">
+          Must be 18yrs or older to enter.
+        </a>
+      </div>
+
+      <div class="banner-frame" aria-label="Made in the U.S.A 16 by 11 banner">
+        <div class="made-usa-banner">
+          <img
+            id="flagImage"
+            width="16"
+            height="11"
+            alt="United States flag"
+            loading="eager"
+            referrerpolicy="no-referrer-when-downgrade" />
+          <span class="made-usa-text">Made in the U.S.A</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>"Ethical Typos"</strong> by Liquidsky Security © 2025-<span id="currentYear">2026</span>
+  </footer>
+
+  <script>
+    (function () {
+      const baseImageUrl = "https://www.secretservice.gov/profiles/usssd8_gov/themes/custom/af1/assets/uswds/img/us_flag_small.png";
+
+      const now = new Date();
+      const year = String(now.getFullYear());
+      const month = String(now.getMonth() + 1).padStart(2, "0");
+      const day = String(now.getDate()).padStart(2, "0");
+
+      const currentDate = `${year}-${month}-${day}`;
+      const currentDateYear = `${currentDate}-${year}`;
+      const imageUrl = `${baseImageUrl}?=${encodeURIComponent(currentDateYear)}`;
+
+      document.getElementById("flagImage").src = imageUrl;
+      document.getElementById("currentYear").textContent = year;
+    })();
+
+    (function () {
+      const storageKey = "ethicalTyposEulaAccepted";
+      const overlay = document.getElementById("eulaOverlay");
+      const checkbox = document.getElementById("eulaAgreeCheck");
+      const acceptButton = document.getElementById("eulaAcceptButton");
+      const declineButton = document.getElementById("eulaDeclineButton");
+
+      function closeEula() {
+        overlay.hidden = true;
+        document.body.classList.remove("eula-open");
+      }
+
+      function showEula() {
+        overlay.hidden = false;
+        document.body.classList.add("eula-open");
+        setTimeout(function () {
+          checkbox.focus();
+        }, 0);
+      }
+
+      try {
+        if (localStorage.getItem(storageKey) === "true") {
+          closeEula();
+        } else {
+          showEula();
+        }
+      } catch (error) {
+        showEula();
+      }
+
+      checkbox.addEventListener("change", function () {
+        acceptButton.disabled = !checkbox.checked;
+      });
+
+      acceptButton.addEventListener("click", function () {
+        if (!checkbox.checked) {
+          return;
+        }
+
+        try {
+          localStorage.setItem(storageKey, "true");
+        } catch (error) {
+          /* If localStorage is unavailable, allow this session after explicit consent. */
+        }
+
+        closeEula();
+      });
+
+      declineButton.addEventListener("click", function () {
+        window.location.href = "https://www.fbi.gov/investigate/cyber";
+      });
+    })();
+  </script>
+</body>
     <!--
 ETHICAL TYPOS REDIRECT KEYWORD TAXONOMY
 Purpose: defensive redirect matching, content moderation, parental safety, and educational routing.
@@ -1476,111 +1855,4 @@ BEGIN PHRASES
 1250. brute force social media account github
 END PHRASES
   -->
-  
-  <main class="page">
-    <section class="card" aria-label="Ethical Typos Made in the U.S.A page">
-      <div class="eyebrow">Public Safety Redirect</div>
-
-      <h1>Ethical Typos</h1>
-
-      <p class="lede">
-        A clean redirect surface for typo-aware safety guidance, youth-positive messaging,
-        and responsible online search intervention.
-      </p>
-
-      <div class="age-advisory" role="alert" aria-label="Age advisory">
-        <strong>Advisory:</strong>
-        <a href="https://www.usajobs.gov/job/847989800" target="_blank" rel="noopener noreferrer">
-          Must be 18yrs or older to enter.
-        </a>
-      </div>
-
-      <p class="minor-training">
-        <strong>Fine print:</strong> If you are under 18, please see the following free cybersecurity training:
-        <span class="training-links">
-          <a href="https://cylabacademy.org/" target="_blank" rel="noopener noreferrer">CyLab Security Academy</a>
-          <a href="https://picoctf.org/" target="_blank" rel="noopener noreferrer">picoCTF</a>
-          <a href="https://www.uscyberpatriot.org/" target="_blank" rel="noopener noreferrer">CyberPatriot</a>
-          <a href="https://niccs.cisa.gov/audience/cybersecurity-students" target="_blank" rel="noopener noreferrer">CISA Students</a>
-        </span>
-      </p>
-
-      <div class="banner-frame" aria-label="Made in the U.S.A 16 by 11 banner">
-        <div class="made-usa-banner">
-          <!-- JavaScript appends an exact local timestamp to this image URL at page load. -->
-          <img
-            id="flagImage"
-            width="16"
-            height="11"
-            alt="United States flag"
-            loading="eager"
-            referrerpolicy="no-referrer-when-downgrade" />
-          <span class="made-usa-text">Made in the U.S.A</span>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!--
-  What is an Ethical Typo: Ethical Typos are an innovative idea made on 7/4/26 by Liquidsky Security (c) that are the opposite of typosquatting, a technique used by bad guys to redirect legitimate users to malicious/bad websites. It has the potential to guide the youth and misguided to the right direction.
-  -->
-  
-  <footer>
-    <strong>"Ethical Typos"</strong> by Liquidsky Security © 2025-<span id="currentYear">2026</span>
-  </footer>
-
-  <!-- Read the full script below after visiting the website in a browser
-  
-  https://liquidskysecurity.com/howahackermakemoney 
-  
-  and figure out how if your under 18 you possibly just got your first job reference -->
-  
-  <script>
-    (function () {
-      const baseImageUrl = "https://www.secretservice.gov/profiles/usssd8_gov/themes/custom/af1/assets/uswds/img/us_flag_small.png";
-
-      const now = new Date();
-      const year = String(now.getFullYear());
-      const month = String(now.getMonth() + 1).padStart(2, "0");
-      const day = String(now.getDate()).padStart(2, "0");
-
-      const hours = String(now.getHours()).padStart(2, "0");
-      const minutes = String(now.getMinutes()).padStart(2, "0");
-      const seconds = String(now.getSeconds()).padStart(2, "0");
-
-      const currentDate = `${year}-${month}-${day}`;
-      const currentTime = `${hours}-${minutes}-${seconds}`;
-      const currentTimestamp = `${currentDate}-${currentTime}-${year}`;
-      const imageUrl = `${baseImageUrl}?=${encodeURIComponent(currentTimestamp)}`;
-
-      const flagImage = document.getElementById("flagImage");
-      flagImage.src = imageUrl;
-      flagImage.dataset.imageTimestamp = currentTimestamp;
-      flagImage.title = `Image timestamp: ${currentTimestamp}`;
-
-      document.getElementById("currentYear").textContent = year;
-    })();
-
-    document.addEventListener("contextmenu", function (event) {
-      event.preventDefault();
-
-      alert("The job opportunity states if you are 18 or older you can enter.");
-    });
-  </script>
-
-<!--
-  
-  Rules of engagement: No doxing, no breaking the law, and most of all have respect (Updated 7/6/25)
-  
-  If you can call/contact @fuzzlove and explain why this could be your first job reference you got the ROOT flag, good job!
-
-  Hint: If you need a hint follow this account and make a comment on anything or message me.
-
-  Best Regards,
-
-  Liquidsky Security - 2026 (c)
-  
-  -->
-  
-</body>
 </html>
