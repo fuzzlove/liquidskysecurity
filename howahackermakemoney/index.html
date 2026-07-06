@@ -1,599 +1,755 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ethical Typos - Made in the U.S.A</title>
-  <meta name="description" content="Ethical Typos by Liquidsky Security | Made in the U.S.A" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ethical Typos - Made in the U.S.A</title>
+<meta name="description" content="Ethical Typos by Liquidsky Security | Made in the U.S.A" />
 
-  <style>
-    :root {
-      --bg: #0b1220;
-      --panel: #ffffff;
-      --panel-dark: rgba(255, 255, 255, 0.08);
-      --line: rgba(255, 255, 255, 0.14);
-      --line-light: #d7dde8;
-      --text: #ffffff;
-      --text-dark: #111827;
-      --muted: rgba(255, 255, 255, 0.74);
-      --shadow: 0 24px 70px rgba(0, 0, 0, 0.25);
-      --warning: #fde68a;
-      --warning-bg: rgba(251, 191, 36, 0.10);
-      --warning-line: rgba(251, 191, 36, 0.45);
-      --danger: #fecaca;
-      --danger-bg: rgba(239, 68, 68, 0.12);
-      --danger-line: rgba(239, 68, 68, 0.46);
-      --accent: #b9d4ff;
-    }
+<style>
+:root {
+--bg: #0b1220;
+--panel: #ffffff;
+--panel-dark: rgba(255, 255, 255, 0.08);
+--line: rgba(255, 255, 255, 0.14);
+--line-light: #d7dde8;
+--text: #ffffff;
+--text-dark: #111827;
+--muted: rgba(255, 255, 255, 0.74);
+--shadow: 0 24px 70px rgba(0, 0, 0, 0.25);
+--warning: #fde68a;
+--warning-bg: rgba(251, 191, 36, 0.10);
+--warning-line: rgba(251, 191, 36, 0.45);
+--danger: #fecaca;
+--danger-bg: rgba(239, 68, 68, 0.12);
+--danger-line: rgba(239, 68, 68, 0.46);
+--accent: #b9d4ff;
+}
 
-    * {
-      box-sizing: border-box;
-    }
+* {
+box-sizing: border-box;
+}
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(37, 99, 235, 0.28), transparent 34rem),
-        linear-gradient(135deg, #07101f 0%, var(--bg) 55%, #101b32 100%);
-      color: var(--text);
-    }
+body {
+margin: 0;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+background:
+radial-gradient(circle at top left, rgba(37, 99, 235, 0.28), transparent 34rem),
+linear-gradient(135deg, #07101f 0%, var(--bg) 55%, #101b32 100%);
+color: var(--text);
+}
 
-    body.eula-open {
-      overflow: hidden;
-    }
+body.eula-open {
+overflow: hidden;
+}
 
-    .page {
-      width: min(960px, calc(100% - 32px));
-      margin: 0 auto;
-      flex: 1;
-      display: grid;
-      place-items: center;
-      padding: 56px 0;
-    }
+.page {
+width: min(960px, calc(100% - 32px));
+margin: 0 auto;
+flex: 1;
+display: grid;
+place-items: center;
+padding: 56px 0;
+}
 
-    .card {
-      width: 100%;
-      padding: 32px;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      background: var(--panel-dark);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(14px);
-      text-align: center;
-    }
+.card {
+width: 100%;
+padding: 32px;
+border: 1px solid var(--line);
+border-radius: 24px;
+background: var(--panel-dark);
+box-shadow: var(--shadow);
+backdrop-filter: blur(14px);
+text-align: center;
+}
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 16px;
-      padding: 6px 10px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--accent);
-      font-size: 0.76rem;
-      font-weight: 800;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      background: rgba(255, 255, 255, 0.05);
-    }
+.eyebrow {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 16px;
+padding: 6px 10px;
+border: 1px solid var(--line);
+border-radius: 999px;
+color: var(--accent);
+font-size: 0.76rem;
+font-weight: 800;
+letter-spacing: 0.09em;
+text-transform: uppercase;
+background: rgba(255, 255, 255, 0.05);
+}
 
-    h1 {
-      margin: 0 0 12px;
-      font-size: clamp(2rem, 5vw, 4.5rem);
-      line-height: 1;
-      letter-spacing: -0.055em;
-    }
+h1 {
+margin: 0 0 12px;
+font-size: clamp(2rem, 5vw, 4.5rem);
+line-height: 1;
+letter-spacing: -0.055em;
+}
 
-    .lede {
-      max-width: 680px;
-      margin: 0 auto 28px;
-      color: var(--muted);
-      font-size: 1.05rem;
-      line-height: 1.7;
-    }
+.lede {
+max-width: 680px;
+margin: 0 auto 28px;
+color: var(--muted);
+font-size: 1.05rem;
+line-height: 1.7;
+}
 
-    .age-advisory {
-      max-width: 680px;
-      margin: 0 auto 28px;
-      padding: 14px 16px;
-      border: 1px solid var(--warning-line);
-      border-radius: 14px;
-      background: var(--warning-bg);
-      color: var(--warning);
-      font-size: 0.95rem;
-      font-weight: 700;
-      line-height: 1.5;
-      text-align: center;
-    }
+.age-advisory {
+max-width: 680px;
+margin: 0 auto 28px;
+padding: 14px 16px;
+border: 1px solid var(--warning-line);
+border-radius: 14px;
+background: var(--warning-bg);
+color: var(--warning);
+font-size: 0.95rem;
+font-weight: 700;
+line-height: 1.5;
+text-align: center;
+}
 
-    .age-advisory strong {
-      color: #ffffff;
-      font-weight: 900;
-    }
+.age-advisory strong {
+color: #ffffff;
+font-weight: 900;
+}
 
-    .age-advisory a {
-      color: var(--warning);
-      font-weight: 900;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(253, 230, 138, 0.75);
-    }
+.age-advisory a {
+color: var(--warning);
+font-weight: 900;
+text-decoration: none;
+border-bottom: 1px solid rgba(253, 230, 138, 0.75);
+}
 
-    .banner-frame {
-      display: inline-grid;
-      place-items: center;
-      padding: 14px 16px;
-      border: 1px solid var(--line-light);
-      border-radius: 14px;
-      background: var(--panel);
-    }
 
-    .made-usa-banner {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      height: 11px;
-      white-space: nowrap;
-    }
+.training-panel {
+max-width: 760px;
+margin: 0 auto 28px;
+padding: 22px;
+border: 1px solid rgba(147, 197, 253, 0.28);
+border-radius: 18px;
+background:
+linear-gradient(180deg, rgba(147, 197, 253, 0.10), rgba(147, 197, 253, 0.04)),
+rgba(255, 255, 255, 0.045);
+text-align: left;
+}
 
-    .made-usa-banner img {
-      display: block;
-      width: 16px;
-      height: 11px;
-      object-fit: contain;
-      flex: 0 0 16px;
-    }
+.training-kicker {
+margin-bottom: 8px;
+color: var(--accent);
+font-size: 0.76rem;
+font-weight: 900;
+letter-spacing: 0.10em;
+text-transform: uppercase;
+}
 
-    .made-usa-text {
-      display: inline-block;
-      color: var(--text-dark);
-      font-size: 9px;
-      font-weight: 800;
-      line-height: 11px;
-      letter-spacing: 0.005em;
-      text-transform: uppercase;
-      transform: translateY(-0.25px);
-    }
+.training-panel h2 {
+margin: 0 0 10px;
+color: #ffffff;
+font-size: clamp(1.35rem, 2.8vw, 2.1rem);
+line-height: 1.08;
+letter-spacing: -0.035em;
+}
 
-    footer {
-      width: 100%;
-      padding: 20px 16px;
-      border-top: 1px solid var(--line);
-      color: rgba(255, 255, 255, 0.72);
-      font-size: 0.92rem;
-      text-align: center;
-      background: rgba(0, 0, 0, 0.16);
-    }
+.training-panel p {
+margin: 0;
+color: var(--muted);
+line-height: 1.65;
+}
 
-    footer strong {
-      color: #ffffff;
-      font-weight: 800;
-    }
+.training-grid {
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 12px;
+margin-top: 18px;
+}
 
-    .eula-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-      background: rgba(3, 7, 18, 0.88);
-      backdrop-filter: blur(18px);
-    }
+.training-card {
+display: block;
+min-height: 120px;
+padding: 16px;
+border: 1px solid rgba(255, 255, 255, 0.14);
+border-radius: 14px;
+background: rgba(255, 255, 255, 0.055);
+color: #ffffff;
+text-decoration: none;
+transition: transform 140ms ease, border-color 140ms ease, background 140ms ease;
+}
 
-    .eula-overlay[hidden] {
-      display: none;
-    }
+.training-card:hover,
+.training-card:focus {
+transform: translateY(-1px);
+border-color: rgba(147, 197, 253, 0.62);
+background: rgba(147, 197, 253, 0.10);
+outline: none;
+}
 
-    .eula-dialog {
-      width: min(920px, 100%);
-      max-height: min(86vh, 860px);
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 24px;
-      background: #0b1220;
-      color: #ffffff;
-      box-shadow: 0 34px 120px rgba(0, 0, 0, 0.55);
-    }
+.training-card strong {
+display: block;
+margin-bottom: 6px;
+color: #dbeafe;
+font-size: 0.98rem;
+line-height: 1.25;
+}
 
-    .eula-header {
-      padding: 26px 28px 20px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-      background: rgba(255, 255, 255, 0.035);
-    }
+.training-card span {
+display: block;
+color: var(--muted);
+font-size: 0.88rem;
+line-height: 1.55;
+}
 
-    .eula-kicker {
-      margin-bottom: 10px;
-      color: var(--accent);
-      font-size: 0.78rem;
-      font-weight: 900;
-      letter-spacing: 0.10em;
-      text-transform: uppercase;
-    }
+.training-note {
+margin-top: 16px !important;
+padding: 14px 16px;
+border: 1px solid rgba(251, 191, 36, 0.34);
+border-radius: 14px;
+background: rgba(251, 191, 36, 0.08);
+color: var(--warning) !important;
+font-size: 0.92rem;
+font-weight: 700;
+}
 
-    .eula-header h2 {
-      margin: 0;
-      font-size: clamp(1.5rem, 3vw, 2.6rem);
-      line-height: 1.05;
-      letter-spacing: -0.04em;
-    }
+.banner-frame {
+display: inline-grid;
+place-items: center;
+padding: 14px 16px;
+border: 1px solid var(--line-light);
+border-radius: 14px;
+background: var(--panel);
+}
 
-    .eula-header p,
-    .eula-section p,
-    .eula-section ul {
-      color: var(--muted);
-      line-height: 1.65;
-    }
+.made-usa-banner {
+display: inline-flex;
+align-items: center;
+gap: 4px;
+height: 11px;
+white-space: nowrap;
+}
 
-    .eula-body {
-      padding: 24px 28px;
-      overflow: auto;
-    }
+.made-usa-banner img {
+display: block;
+width: 16px;
+height: 11px;
+object-fit: contain;
+flex: 0 0 16px;
+}
 
-    .eula-alert {
-      margin-bottom: 20px;
-      padding: 14px 16px;
-      border: 1px solid var(--danger-line);
-      border-radius: 14px;
-      background: var(--danger-bg);
-      color: var(--danger);
-      font-weight: 900;
-      line-height: 1.55;
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-    }
+.made-usa-text {
+display: inline-block;
+color: var(--text-dark);
+font-size: 9px;
+font-weight: 800;
+line-height: 11px;
+letter-spacing: 0.005em;
+text-transform: uppercase;
+transform: translateY(-0.25px);
+}
 
-    .eula-section {
-      padding: 18px 0;
-      border-top: 1px solid rgba(255, 255, 255, 0.10);
-      text-align: left;
-    }
+footer {
+width: 100%;
+padding: 20px 16px;
+border-top: 1px solid var(--line);
+color: rgba(255, 255, 255, 0.72);
+font-size: 0.92rem;
+text-align: center;
+background: rgba(0, 0, 0, 0.16);
+}
 
-    .eula-section:first-of-type {
-      border-top: 0;
-      padding-top: 0;
-    }
+footer strong {
+color: #ffffff;
+font-weight: 800;
+}
 
-    .eula-section h3 {
-      margin: 0 0 10px;
-      font-size: 1rem;
-    }
+.eula-overlay {
+position: fixed;
+inset: 0;
+z-index: 9999;
+display: grid;
+place-items: center;
+padding: 24px;
+background: rgba(3, 7, 18, 0.88);
+backdrop-filter: blur(18px);
+}
 
-    .eula-section p {
-      margin: 0;
-    }
+.eula-overlay[hidden] {
+display: none;
+}
 
-    .eula-section ul {
-      margin: 10px 0 0;
-      padding-left: 20px;
-    }
+.eula-dialog {
+width: min(920px, 100%);
+max-height: min(86vh, 860px);
+display: flex;
+flex-direction: column;
+overflow: hidden;
+border: 1px solid rgba(255, 255, 255, 0.18);
+border-radius: 24px;
+background: #0b1220;
+color: #ffffff;
+box-shadow: 0 34px 120px rgba(0, 0, 0, 0.55);
+}
 
-    .eula-section li + li {
-      margin-top: 6px;
-    }
+.eula-header {
+padding: 26px 28px 20px;
+border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+background: rgba(255, 255, 255, 0.035);
+}
 
-    .eula-check {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      margin-top: 20px;
-      padding: 14px 16px;
-      border: 1px solid rgba(147, 197, 253, 0.34);
-      border-radius: 14px;
-      background: rgba(147, 197, 253, 0.08);
-      color: #dbeafe;
-      text-align: left;
-    }
+.eula-kicker {
+margin-bottom: 10px;
+color: var(--accent);
+font-size: 0.78rem;
+font-weight: 900;
+letter-spacing: 0.10em;
+text-transform: uppercase;
+}
 
-    .eula-check input {
-      width: 18px;
-      height: 18px;
-      margin-top: 2px;
-      accent-color: #93c5fd;
-      flex: 0 0 18px;
-    }
+.eula-header h2 {
+margin: 0;
+font-size: clamp(1.5rem, 3vw, 2.6rem);
+line-height: 1.05;
+letter-spacing: -0.04em;
+}
 
-    .eula-check label {
-      font-weight: 750;
-      line-height: 1.55;
-      cursor: pointer;
-    }
+.eula-header p,
+.eula-section p,
+.eula-section ul {
+color: var(--muted);
+line-height: 1.65;
+}
 
-    .eula-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: flex-end;
-      padding: 18px 28px 24px;
-      border-top: 1px solid rgba(255, 255, 255, 0.14);
-      background: rgba(0, 0, 0, 0.18);
-    }
+.eula-body {
+padding: 24px 28px;
+overflow: auto;
+}
 
-    .btn {
-      border: 1px solid transparent;
-      border-radius: 12px;
-      padding: 12px 16px;
-      font: inherit;
-      font-weight: 900;
-      cursor: pointer;
-    }
+.eula-alert {
+margin-bottom: 20px;
+padding: 14px 16px;
+border: 1px solid var(--danger-line);
+border-radius: 14px;
+background: var(--danger-bg);
+color: var(--danger);
+font-weight: 900;
+line-height: 1.55;
+text-transform: uppercase;
+letter-spacing: 0.02em;
+}
 
-    .btn-primary {
-      background: #dbeafe;
-      color: #0b1220;
-    }
+.eula-section {
+padding: 18px 0;
+border-top: 1px solid rgba(255, 255, 255, 0.10);
+text-align: left;
+}
 
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.06);
-      color: #ffffff;
-      border-color: rgba(255, 255, 255, 0.18);
-    }
+.eula-section:first-of-type {
+border-top: 0;
+padding-top: 0;
+}
 
-    .btn[disabled] {
-      opacity: 0.45;
-      cursor: not-allowed;
-    }
+.eula-section h3 {
+margin: 0 0 10px;
+font-size: 1rem;
+}
 
-    .eula-small {
-      margin-top: 12px;
-      color: rgba(255, 255, 255, 0.56);
-      font-size: 0.82rem;
-      line-height: 1.5;
-    }
+.eula-section p {
+margin: 0;
+}
 
-    @media (max-width: 640px) {
-      .page {
-        width: min(100% - 20px, 960px);
-        padding: 28px 0;
-      }
+.eula-section ul {
+margin: 10px 0 0;
+padding-left: 20px;
+}
 
-      .card {
-        padding: 24px 18px;
-      }
+.eula-section li + li {
+margin-top: 6px;
+}
 
-      .eula-overlay {
-        padding: 12px;
-      }
+.eula-check {
+display: flex;
+align-items: flex-start;
+gap: 10px;
+margin-top: 20px;
+padding: 14px 16px;
+border: 1px solid rgba(147, 197, 253, 0.34);
+border-radius: 14px;
+background: rgba(147, 197, 253, 0.08);
+color: #dbeafe;
+text-align: left;
+}
 
-      .eula-header,
-      .eula-body,
-      .eula-actions {
-        padding-left: 18px;
-        padding-right: 18px;
-      }
+.eula-check input {
+width: 18px;
+height: 18px;
+margin-top: 2px;
+accent-color: #93c5fd;
+flex: 0 0 18px;
+}
 
-      .eula-actions {
-        justify-content: stretch;
-      }
+.eula-check label {
+font-weight: 750;
+line-height: 1.55;
+cursor: pointer;
+}
 
-      .btn {
-        width: 100%;
-      }
-    }
-  </style>
+.eula-actions {
+display: flex;
+flex-wrap: wrap;
+gap: 12px;
+justify-content: flex-end;
+padding: 18px 28px 24px;
+border-top: 1px solid rgba(255, 255, 255, 0.14);
+background: rgba(0, 0, 0, 0.18);
+}
+
+.btn {
+border: 1px solid transparent;
+border-radius: 12px;
+padding: 12px 16px;
+font: inherit;
+font-weight: 900;
+cursor: pointer;
+}
+
+.btn-primary {
+background: #dbeafe;
+color: #0b1220;
+}
+
+.btn-secondary {
+background: rgba(255, 255, 255, 0.06);
+color: #ffffff;
+border-color: rgba(255, 255, 255, 0.18);
+}
+
+.btn[disabled] {
+opacity: 0.45;
+cursor: not-allowed;
+}
+
+.eula-small {
+margin-top: 12px;
+color: rgba(255, 255, 255, 0.56);
+font-size: 0.82rem;
+line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+.page {
+width: min(100% - 20px, 960px);
+padding: 28px 0;
+}
+
+.card {
+padding: 24px 18px;
+}
+
+.eula-overlay {
+padding: 12px;
+}
+
+.eula-header,
+.eula-body,
+.eula-actions {
+padding-left: 18px;
+padding-right: 18px;
+}
+
+.eula-actions {
+justify-content: stretch;
+}
+
+.btn {
+width: 100%;
+}
+
+.training-grid {
+grid-template-columns: 1fr;
+}
+
+.training-panel {
+padding: 18px;
+}
+
+}
+</style>
 </head>
 
 <body class="eula-open">
-  <div id="eulaOverlay" class="eula-overlay" role="dialog" aria-modal="true" aria-labelledby="eulaTitle" aria-describedby="eulaSummary">
-    <section class="eula-dialog">
-      <header class="eula-header">
-        <div class="eula-kicker">End User License Agreement</div>
-        <h2 id="eulaTitle">Legal Use Notice and Site Access Agreement</h2>
-        <p id="eulaSummary">
-          Before entering Ethical Typos, you must confirm that you are at least 18 years old
-          and that you will use this site only for lawful, educational, defensive, and authorized cybersecurity purposes.
-        </p>
-      </header>
+<div id="eulaOverlay" class="eula-overlay" role="dialog" aria-modal="true" aria-labelledby="eulaTitle" aria-describedby="eulaSummary">
+<section class="eula-dialog">
+<header class="eula-header">
+<div class="eula-kicker">End User License Agreement</div>
+<h2 id="eulaTitle">Legal Use Notice and Site Access Agreement</h2>
+<p id="eulaSummary">
+Before entering Ethical Typos, you must confirm that you are at least 18 years old
+and that you will use this site only for lawful, educational, defensive, and authorized cybersecurity purposes.
+</p>
+</header>
 
-      <div class="eula-body">
-        <div class="eula-alert">
-          DO NOT BREAK THE LAW. Do not use this site, its content, its redirect phrases,
-          or any related materials to violate the laws of the United States of America.
-        </div>
+<div class="eula-body">
+<div class="eula-alert">
+DO NOT BREAK THE LAW. Do not use this site, its content, its redirect phrases,
+or any related materials to violate the laws of the United States of America.
+</div>
 
-        <section class="eula-section">
-          <h3>1. Age Requirement</h3>
-          <p>
-            You must be 18 years of age or older to enter, access, or use this site.
-            If you are not 18 years of age or older, do not enter or use this site.
-          </p>
-        </section>
+<section class="eula-section">
+<h3>1. Age Requirement</h3>
+<p>
+You must be 18 years of age or older to enter, access, or use this site.
+If you are not 18 years of age or older, do not enter or use this site.
+</p>
+</section>
 
-        <section class="eula-section">
-          <h3>2. Lawful and Authorized Use Only</h3>
-          <p>
-            Ethical Typos is provided for lawful cybersecurity education, safety redirection,
-            defensive awareness, responsible research, and authorized security work only.
-            You agree not to use this site for any unlawful purpose.
-          </p>
-        </section>
+<section class="eula-section">
+<h3>2. Lawful and Authorized Use Only</h3>
+<p>
+Ethical Typos is provided for lawful cybersecurity education, safety redirection,
+defensive awareness, responsible research, and authorized security work only.
+You agree not to use this site for any unlawful purpose.
+</p>
+</section>
 
-        <section class="eula-section">
-          <h3>3. Prohibited Conduct</h3>
-          <p>You must not use this site, its code, its phrase lists, or its content to:</p>
-          <ul>
-            <li>Access, attempt to access, scan, attack, or test any computer, account, network, application, or service without explicit authorization.</li>
-            <li>Steal, harvest, solicit, trade, or misuse passwords, cookies, tokens, sessions, private messages, personal data, financial data, or authentication material.</li>
-            <li>Create, distribute, deploy, advertise, or operate malware, phishing kits, credential stealers, token grabbers, botnets, ransomware, spyware, or unauthorized remote-access tools.</li>
-            <li>Bypass school, employer, parental, platform, network, account, device-management, or access-control restrictions without permission.</li>
-            <li>Harass, threaten, extort, defraud, impersonate, dox, stalk, exploit, or harm any person, organization, system, or service.</li>
-            <li>Encourage, assist, conceal, or enable illegal hacking, fraud, abuse, unauthorized access, or other cybercrime.</li>
-          </ul>
-        </section>
+<section class="eula-section">
+<h3>3. Prohibited Conduct</h3>
+<p>You must not use this site, its code, its phrase lists, or its content to:</p>
+<ul>
+<li>Access, attempt to access, scan, attack, or test any computer, account, network, application, or service without explicit authorization.</li>
+<li>Steal, harvest, solicit, trade, or misuse passwords, cookies, tokens, sessions, private messages, personal data, financial data, or authentication material.</li>
+<li>Create, distribute, deploy, advertise, or operate malware, phishing kits, credential stealers, token grabbers, botnets, ransomware, spyware, or unauthorized remote-access tools.</li>
+<li>Bypass school, employer, parental, platform, network, account, device-management, or access-control restrictions without permission.</li>
+<li>Harass, threaten, extort, defraud, impersonate, dox, stalk, exploit, or harm any person, organization, system, or service.</li>
+<li>Encourage, assist, conceal, or enable illegal hacking, fraud, abuse, unauthorized access, or other cybercrime.</li>
+</ul>
+</section>
 
-        <section class="eula-section">
-          <h3>4. Authorized Security Research</h3>
-          <p>
-            Security testing must be performed only in systems you own, systems you are expressly authorized to test,
-            legal training labs, CTF environments, or programs with written rules of engagement.
-            You are responsible for obtaining permission before testing and for following all applicable laws,
-            contracts, policies, scope limits, and disclosure requirements.
-          </p>
-        </section>
+<section class="eula-section">
+<h3>4. Authorized Security Research</h3>
+<p>
+Security testing must be performed only in systems you own, systems you are expressly authorized to test,
+legal training labs, CTF environments, or programs with written rules of engagement.
+You are responsible for obtaining permission before testing and for following all applicable laws,
+contracts, policies, scope limits, and disclosure requirements.
+</p>
+</section>
 
-        <section class="eula-section">
-          <h3>5. No Legal Advice</h3>
-          <p>
-            This EULA and legal notice are not legal advice. Laws, regulations, contracts, and platform rules can vary
-            by jurisdiction and context. Consult a qualified attorney for advice about your specific situation.
-          </p>
-        </section>
+<section class="eula-section">
+<h3>5. No Legal Advice</h3>
+<p>
+This EULA and legal notice are not legal advice. Laws, regulations, contracts, and platform rules can vary
+by jurisdiction and context. Consult a qualified attorney for advice about your specific situation.
+</p>
+</section>
 
-        <section class="eula-section">
-          <h3>6. No Warranty</h3>
-          <p>
-            This site is provided “as is” and “as available,” without warranties of any kind.
-            Liquidsky Security does not guarantee that the site will be error-free, uninterrupted,
-            legally sufficient for every jurisdiction, or suitable for any particular use.
-          </p>
-        </section>
+<section class="eula-section">
+<h3>6. No Warranty</h3>
+<p>
+This site is provided “as is” and “as available,” without warranties of any kind.
+Liquidsky Security does not guarantee that the site will be error-free, uninterrupted,
+legally sufficient for every jurisdiction, or suitable for any particular use.
+</p>
+</section>
 
-        <section class="eula-section">
-          <h3>7. Enforcement and Access Termination</h3>
-          <p>
-            Liquidsky Security may deny, restrict, or terminate access for suspected abuse, unlawful use,
-            policy violations, or attempts to misuse this site. Serious abuse may be preserved, reviewed,
-            or reported to appropriate parties where legally permitted or required.
-          </p>
-        </section>
+<section class="eula-section">
+<h3>7. Enforcement and Access Termination</h3>
+<p>
+Liquidsky Security may deny, restrict, or terminate access for suspected abuse, unlawful use,
+policy violations, or attempts to misuse this site. Serious abuse may be preserved, reviewed,
+or reported to appropriate parties where legally permitted or required.
+</p>
+</section>
 
-        <div class="eula-check">
-          <input id="eulaAgreeCheck" type="checkbox" />
-          <label for="eulaAgreeCheck">
-            I am 18 years of age or older, I have read this EULA, and I agree to use this site only for lawful,
-            authorized, educational, defensive, or responsible cybersecurity purposes.
-          </label>
-        </div>
 
-        <p class="eula-small">
-          Acceptance is stored locally in your browser. Clearing browser storage may show this notice again.
-        </p>
-      </div>
+<section class="eula-section">
+<h3>8. Free Cybersecurity Job Training and Career Pathway</h3>
+<p>
+Users seeking hacking-related content should be redirected toward lawful education and public-service career paths.
+Recommended government-aligned resources include CISA Learning, CISA Cybersecurity Training &amp; Exercises,
+the NICCS Cyber Career Pathways Tool, the NIST NICE Framework, FBI Special Agent requirements,
+and the USAJOBS Special Agent cybersecurity/technology posting.
+</p>
+</section>
 
-      <footer class="eula-actions">
-        <button id="eulaDeclineButton" class="btn btn-secondary" type="button">
-          I Do Not Agree
-        </button>
-        <button id="eulaAcceptButton" class="btn btn-primary" type="button" disabled>
-          I Agree — Enter Site
-        </button>
-      </footer>
-    </section>
-  </div>
+<div class="eula-check">
+<input id="eulaAgreeCheck" type="checkbox" />
+<label for="eulaAgreeCheck">
+I am 18 years of age or older, I have read this EULA, and I agree to use this site only for lawful,
+authorized, educational, defensive, or responsible cybersecurity purposes.
+</label>
+</div>
 
-  <main class="page">
-    <section class="card" aria-label="Ethical Typos Made in the U.S.A page">
-      <div class="eyebrow">Public Safety Redirect</div>
+<p class="eula-small">
+Acceptance is stored locally in your browser. Clearing browser storage may show this notice again.
+</p>
+</div>
 
-      <h1>Ethical Typos</h1>
+<footer class="eula-actions">
+<button id="eulaDeclineButton" class="btn btn-secondary" type="button">
+I Do Not Agree
+</button>
+<button id="eulaAcceptButton" class="btn btn-primary" type="button" disabled>
+I Agree — Enter Site
+</button>
+</footer>
+</section>
+</div>
 
-      <p class="lede">
-        A clean redirect surface for typo-aware safety guidance, youth-positive messaging,
-        and responsible online search intervention.
-      </p>
+<main class="page">
+<section class="card" aria-label="Ethical Typos Made in the U.S.A page">
+<div class="eyebrow">Public Safety Redirect</div>
 
-      <div class="age-advisory" role="alert" aria-label="Age advisory">
-        <strong>Advisory:</strong>
-        <a href="https://www.usajobs.gov/job/847989800" target="_blank" rel="noopener noreferrer">
-          Must be 18yrs or older to enter.
-        </a>
-      </div>
+<h1>Ethical Typos</h1>
 
-      <div class="banner-frame" aria-label="Made in the U.S.A 16 by 11 banner">
-        <div class="made-usa-banner">
-          <img
-            id="flagImage"
-            width="16"
-            height="11"
-            alt="United States flag"
-            loading="eager"
-            referrerpolicy="no-referrer-when-downgrade" />
-          <span class="made-usa-text">Made in the U.S.A</span>
-        </div>
-      </div>
-    </section>
-  </main>
+<p class="lede">
+A clean redirect surface for typo-aware safety guidance, youth-positive messaging,
+and responsible online search intervention.
+</p>
 
-  <footer>
-    <strong>"Ethical Typos"</strong> by Liquidsky Security © 2025-<span id="currentYear">2026</span>
-  </footer>
+<div class="age-advisory" role="alert" aria-label="Age advisory">
+<strong>Advisory:</strong>
+<a href="https://www.usajobs.gov/job/847989800" target="_blank" rel="noopener noreferrer">
+Must be 18yrs or older to enter.
+</a>
+</div>
 
-  <script>
-    (function () {
-      const baseImageUrl = "https://www.secretservice.gov/profiles/usssd8_gov/themes/custom/af1/assets/uswds/img/us_flag_small.png";
 
-      const now = new Date();
-      const year = String(now.getFullYear());
-      const month = String(now.getMonth() + 1).padStart(2, "0");
-      const day = String(now.getDate()).padStart(2, "0");
+<section class="training-panel" aria-label="Free cybersecurity job training and special agent career pathway">
+<div class="training-kicker">Free Cybersecurity Job Training</div>
+<h2>Start a lawful cybersecurity path toward federal investigative service.</h2>
+<p>
+These official government resources route curious users away from illegal hacking terms and toward
+lawful cybersecurity training, defensive skills, career mapping, and the federal Special Agent application path.
+</p>
 
-      const currentDate = `${year}-${month}-${day}`;
-      const currentDateYear = `${currentDate}-${year}`;
-      const imageUrl = `${baseImageUrl}?=${encodeURIComponent(currentDateYear)}`;
+<div class="training-grid">
+<a class="training-card" href="https://niccs.cisa.gov/training/cisa-learning" target="_blank" rel="noopener noreferrer">
+<strong>CISA Learning</strong>
+<span>No-cost online cybersecurity training from CISA/NICCS, including beginner-to-advanced security topics.</span>
+</a>
 
-      document.getElementById("flagImage").src = imageUrl;
-      document.getElementById("currentYear").textContent = year;
-    })();
+<a class="training-card" href="https://www.cisa.gov/topics/cybersecurity-best-practices/cybersecurity-training-exercises" target="_blank" rel="noopener noreferrer">
+<strong>CISA Cybersecurity Training &amp; Exercises</strong>
+<span>Government cybersecurity training and exercise resources for lawful defensive skill development.</span>
+</a>
 
-    (function () {
-      const storageKey = "ethicalTyposEulaAccepted";
-      const overlay = document.getElementById("eulaOverlay");
-      const checkbox = document.getElementById("eulaAgreeCheck");
-      const acceptButton = document.getElementById("eulaAcceptButton");
-      const declineButton = document.getElementById("eulaDeclineButton");
+<a class="training-card" href="https://niccs.cisa.gov/tools/cyber-career-pathways-tool" target="_blank" rel="noopener noreferrer">
+<strong>Cyber Career Pathways Tool</strong>
+<span>Explore cyber work roles, skills, and career paths using the NICE Framework.</span>
+</a>
 
-      function closeEula() {
-        overlay.hidden = true;
-        document.body.classList.remove("eula-open");
-      }
+<a class="training-card" href="https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center" target="_blank" rel="noopener noreferrer">
+<strong>NIST NICE Framework</strong>
+<span>Use the national cybersecurity workforce framework to map knowledge, skills, and work roles.</span>
+</a>
 
-      function showEula() {
-        overlay.hidden = false;
-        document.body.classList.add("eula-open");
-        setTimeout(function () {
-          checkbox.focus();
-        }, 0);
-      }
+<a class="training-card" href="https://fbijobs.gov/special-agents/application-and-evaluation-process" target="_blank" rel="noopener noreferrer">
+<strong>FBI Special Agent Requirements</strong>
+<span>Review official eligibility, application, evaluation, clearance, physical, and training requirements.</span>
+</a>
 
-      try {
-        if (localStorage.getItem(storageKey) === "true") {
-          closeEula();
-        } else {
-          showEula();
-        }
-      } catch (error) {
-        showEula();
-      }
+<a class="training-card" href="https://www.usajobs.gov/job/847989800" target="_blank" rel="noopener noreferrer">
+<strong>USAJOBS Cyber/Technology Special Agent Posting</strong>
+<span>View the 18+ federal Special Agent career opportunity linked from this page.</span>
+</a>
+</div>
 
-      checkbox.addEventListener("change", function () {
-        acceptButton.disabled = !checkbox.checked;
-      });
+<p class="training-note">
+Recommended lawful pathway: CISA Learning → NICE work-role mapping → defensive labs/CTFs →
+federal resume preparation → FBI Special Agent eligibility review → USAJOBS application.
+</p>
+</section>
 
-      acceptButton.addEventListener("click", function () {
-        if (!checkbox.checked) {
-          return;
-        }
+<div class="banner-frame" aria-label="Made in the U.S.A 16 by 11 banner">
+<div class="made-usa-banner">
+<img
+id="flagImage"
+width="16"
+height="11"
+alt="United States flag"
+loading="eager"
+referrerpolicy="no-referrer-when-downgrade" />
+<span class="made-usa-text">Made in the U.S.A</span>
+</div>
+</div>
+</section>
+</main>
 
-        try {
-          localStorage.setItem(storageKey, "true");
-        } catch (error) {
-          /* If localStorage is unavailable, allow this session after explicit consent. */
-        }
+<footer>
+<strong>"Ethical Typos"</strong> by Liquidsky Security © 2025-<span id="currentYear">2026</span>
+</footer>
 
-        closeEula();
-      });
+<script>
+(function () {
+const baseImageUrl = "https://www.secretservice.gov/profiles/usssd8_gov/themes/custom/af1/assets/uswds/img/us_flag_small.png";
 
-      declineButton.addEventListener("click", function () {
-        window.location.href = "https://www.fbi.gov/investigate/cyber";
-      });
-    })();
-  </script>
+const now = new Date();
+const year = String(now.getFullYear());
+const month = String(now.getMonth() + 1).padStart(2, "0");
+const day = String(now.getDate()).padStart(2, "0");
+
+const currentDate = `${year}-${month}-${day}`;
+const currentDateYear = `${currentDate}-${year}`;
+const imageUrl = `${baseImageUrl}?=${encodeURIComponent(currentDateYear)}`;
+
+document.getElementById("flagImage").src = imageUrl;
+document.getElementById("currentYear").textContent = year;
+})();
+
+(function () {
+const storageKey = "ethicalTyposEulaAccepted";
+const overlay = document.getElementById("eulaOverlay");
+const checkbox = document.getElementById("eulaAgreeCheck");
+const acceptButton = document.getElementById("eulaAcceptButton");
+const declineButton = document.getElementById("eulaDeclineButton");
+
+function closeEula() {
+overlay.hidden = true;
+document.body.classList.remove("eula-open");
+}
+
+function showEula() {
+overlay.hidden = false;
+document.body.classList.add("eula-open");
+setTimeout(function () {
+checkbox.focus();
+}, 0);
+}
+
+try {
+if (localStorage.getItem(storageKey) === "true") {
+closeEula();
+} else {
+showEula();
+}
+} catch (error) {
+showEula();
+}
+
+checkbox.addEventListener("change", function () {
+acceptButton.disabled = !checkbox.checked;
+});
+
+acceptButton.addEventListener("click", function () {
+if (!checkbox.checked) {
+return;
+}
+
+try {
+localStorage.setItem(storageKey, "true");
+} catch (error) {
+/* If localStorage is unavailable, allow this session after explicit consent. */
+}
+
+closeEula();
+});
+
+declineButton.addEventListener("click", function () {
+window.location.href = "https://www.fbi.gov/investigate/cyber";
+});
+})();
+</script>
 </body>
     <!--
 ETHICAL TYPOS REDIRECT KEYWORD TAXONOMY
