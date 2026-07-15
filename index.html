@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>LiquidSky Network Security | Defending Networks.</title>
+    <title>LiquidSky Network Security | Authorized Testing. Practical Remediation.</title>
     <meta
       name="description"
       content="OSCP, OSWE, and OSWA-certified security research for businesses that need real-world vulnerability testing, clear remediation, and affordable protection before attackers find the gaps."
@@ -13,7 +13,7 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://liquidskysecurity.com/" />
 
-    <meta property="og:title" content="LiquidSky Network Security | Defending Networks." />
+    <meta property="og:title" content="LiquidSky Network Security | Authorized Testing. Practical Remediation." />
     <meta
       property="og:description"
       content="OSCP, OSWE, and OSWA-certified security research for real-world vulnerability testing, clear remediation, and affordable protection."
@@ -30,6 +30,15 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <style>
+      .terminal-body .warning {
+        color: #f4c96b;
+      }
+
+      .terminal-body p {
+        overflow-wrap: anywhere;
+      }
+    </style>
   </head>
   <body>
 
@@ -54,7 +63,7 @@
           <span class="brand-mark" aria-hidden="true">LS</span>
           <span>
             <strong>LiquidSky Network Security</strong>
-            <small>Practical Protection. Defending Networks.</small>
+            <small>Practical Protection. Authorized Testing. Practical Remediation.</small>
           </span>
         </a>
 
@@ -80,10 +89,10 @@
         <div class="hero-grid container">
           <div class="hero-copy reveal">
             <p class="eyebrow"><span class="pulse-dot"></span>LiquidSky Network Security</p>
-            <h1 id="hero-title">Defending Security With Practical Actions.</h1>
+            <h1 id="hero-title">Find the Path an Attacker Would Use—Then Close It.</h1>
             <p class="hero-subtitle">
-              OSCP, OSWE, and OSWA-certified security research for businesses that need real-world vulnerability
-              testing, clear remediation, and affordable protection before attackers find the gaps.
+              Authorized penetration testing, adversary-driven security assessments, and practical remediation for
+              organizations that need evidence—not stock imagery, fear-based sales, or unverified scanner output.
             </p>
             <div class="hero-actions" aria-label="Primary calls to action">
               <a class="button button-primary" href="#contact">Request a Security Review</a>
@@ -110,21 +119,31 @@
             </dl>
           </div>
 
-          <aside class="terminal-panel reveal" aria-label="Security review preview">
+          <aside class="terminal-panel reveal" aria-label="Authorized penetration test terminal">
             <div class="terminal-bar">
               <span></span>
               <span></span>
               <span></span>
-              <strong>review.scope</strong>
+              <strong>authorized-pentest — ssh</strong>
             </div>
-            <div class="terminal-body">
-              <p><span>$</span> start-security-review --business local</p>
-              <p class="muted">checking web exposure, accounts, devices, MFA, cloud settings...</p>
-              <p><span>+</span> manual testing for auth, access control, session risk</p>
-              <p><span>+</span> clear findings mapped to priority fixes</p>
-              <p><span>+</span> hands-on remediation guidance</p>
+            <div class="terminal-body" role="log" aria-label="Sanitized penetration testing transcript">
+              <p class="muted"># Client-authorized lab engagement · evidence sanitized</p>
+              <p><span>$</span> ssh pentest@10.20.30.17</p>
+              <p class="muted">Last login: Tue Jul 14 21:04:18 2026 from 10.20.30.5</p>
+              <p><span>pentest@web01:~$</span> id</p>
+              <p>uid=1001(pentest) gid=1001(pentest) groups=1001(pentest),998(docker)</p>
+              <p><span>pentest@web01:~$</span> sudo -l</p>
+              <p class="muted">[sudo] password for pentest:</p>
+              <p>User pentest may run the following commands on web01:</p>
+              <p class="warning">(root) NOPASSWD: /usr/local/bin/backup-maintenance</p>
+              <p><span>pentest@web01:~$</span> ./validate-privesc --finding LSNS-2026-017</p>
+              <p class="muted">[+] unsafe privileged execution path confirmed</p>
+              <p class="muted">[+] root context obtained in isolated validation shell</p>
+              <p><span>root@web01:/#</span> id</p>
+              <p class="success">uid=0(root) gid=0(root) groups=0(root)</p>
+              <p><span>root@web01:/#</span> exit</p>
               <div class="scan-line" aria-hidden="true"></div>
-              <p class="success">status: ready for discovery call</p>
+              <p class="success">finding documented · evidence preserved · remediation issued</p>
             </div>
           </aside>
         </div>
@@ -137,7 +156,7 @@
           <a href="https://www.credential.net/200af876-2044-40ad-bce8-f0d18e1c720a#acc.0XmgqQue" target="_blank" rel="noopener noreferrer">OSWA Verified</a>
           <span>Bug Bounty Hunter</span>
           <span>CVE Acknowledged</span>
-          <span>300+ Successful Tests</span>
+          <span>300+ Security Tests</span>
           <span>Security Researcher</span>
           <a href="https://www.linkedin.com/in/j-mcpeters/" target="_blank" rel="noopener noreferrer">LinkedIn Credentials</a>
           <a href="https://github.com/fuzzlove" target="_blank" rel="noopener noreferrer">GitHub Portfolio</a>
@@ -516,12 +535,12 @@
             <span class="brand-mark" aria-hidden="true">LS</span>
             <span>
               <strong>LiquidSky Network Security</strong>
-              <small>Defending Security. Practical Protection.</small>
+              <small>Authorized Testing. Practical Remediation.</small>
             </span>
           </a>
           <p>
             OSCP, OSWE, and OSWA-certified security research for real-world vulnerability testing, clear remediation,
-            and affordable protection. Legal name: LiquidSky Network Security.
+            and affordable protection. LiquidSky Network Security is an independently operated sole proprietorship.
           </p>
         </div>
         <div class="footer-links" aria-label="Footer links">
