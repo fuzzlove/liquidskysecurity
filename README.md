@@ -7,3 +7,5 @@ Static landing page for LiquidSky Network Security: Defensive Security. Practica
 - `index.html` - page content, SEO tags, Open Graph tags, intake form, and editable business details
 - `style.css` - responsive dark theme, glass panels, layout, and animations
 - `script.js` - mobile navigation, scroll reveals, animated hero canvas, and mailto intake handling
+
+- © 2026 Liquidsky Network Security. All Rights Reserved.
