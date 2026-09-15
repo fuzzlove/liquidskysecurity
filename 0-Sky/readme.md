@@ -8,6 +8,10 @@ Devices only.
 
 Target iOS: **17–27**
 
+macOS host: **12 or later on Intel x86_64 or Apple silicon arm64**. The
+published executable and native bridge helper are Universal 2 binaries, and
+the embedded offline Python wheel set includes both host architectures.
+
 Donate: <https://account.venmo.com/u/Joseph-McPeters>
 
 Run `./0sky --help` for options. The default display is a compact percentage

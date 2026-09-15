@@ -14,5 +14,6 @@ compiled `0sky` release, which verifies the connected SRD and renders exact-UDID
 LaunchAgents under `~/Library/LaunchAgents`.
 
 The worker is a compressed/keyed Python 3.12 bytecode loader. The bridge supervisor
-is a stripped arm64 Mach-O executable. Python dependencies and support assets remain
+is a stripped Universal 2 Mach-O executable for Intel x86_64 and Apple silicon arm64.
+Architecture-matched offline Python dependencies and support assets remain
 embedded in the main `0sky` release.

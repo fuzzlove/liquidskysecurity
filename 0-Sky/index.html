@@ -247,7 +247,7 @@
           <p class="lead">A native macOS workflow that validates, provisions, and maintains the secure research environment on an <strong>authorized Apple Security Research Device</strong>.</p>
           <div class="tags" aria-label="Project facts">
             <span class="tag green">Target iOS 17–27</span>
-            <span class="tag">macOS arm64</span>
+            <span class="tag">macOS Universal 2</span>
             <span class="tag">USB exact-UDID binding</span>
             <span class="tag">Fail-closed SRD checks</span>
           </div>
@@ -310,7 +310,7 @@
           <p>Use a dedicated Mac and a direct, reliable USB connection. Keep the target unlocked while pairing or approving host access.</p>
         </div>
         <ul class="checklist">
-          <li><strong>Apple silicon Mac</strong><span>The published executable is a native arm64 Mach-O binary.</span></li>
+          <li><strong>Intel or Apple silicon Mac</strong><span>The published executable is a Universal 2 Mach-O with native x86_64 and arm64 slices.</span></li>
           <li><strong>Full Xcode with an iPhoneOS SDK</strong><span>Apple command-line tools alone may not provide every required SDK or SRD host service.</span></li>
           <li><strong>Authorized Apple Security Research Device</strong><span>Target iOS 17–27, already entitled as research-enabled by Apple.</span></li>
           <li><strong>USB pairing and trust</strong><span>Connect directly, unlock the device, accept Trust, and approve the Mac when requested.</span></li>
@@ -342,7 +342,7 @@ chmod 700 ./0sky</code></pre></div>
             <div>
               <h3>Verify the published checksum</h3>
               <p>Do not run the download if its digest does not match.</p>
-              <div class="codebox"><button class="copy" type="button" aria-label="Copy checksum command">COPY</button><pre><code>echo "189b98a047d3f15ab90134638d07593ea6ee50d5cdd800be72bee3600624a4ff  0sky" \
+              <div class="codebox"><button class="copy" type="button" aria-label="Copy checksum command">COPY</button><pre><code>echo "06855044911c106446fc7c890ac710ca410db7dd72badbc094d9a8b5dcf24d3f  0sky" \
   | shasum -a 256 -c -</code></pre></div>
             </div>
           </article>
@@ -370,7 +370,7 @@ chmod 700 ./0sky</code></pre></div>
         </div>
 
         <div class="integrity">
-          <div><strong>Current 0sky SHA-256</strong><p>Release integrity identifier for the downloadable arm64 binary.</p><div class="hash">189b98a047d3f15ab90134638d07593ea6ee50d5cdd800be72bee3600624a4ff</div></div>
+          <div><strong>Current 0sky SHA-256</strong><p>Release integrity identifier for the downloadable Universal 2 binary.</p><div class="hash">06855044911c106446fc7c890ac710ca410db7dd72badbc094d9a8b5dcf24d3f</div></div>
           <a class="button button-secondary" href="./SHA256SUMS">Checksum file</a>
         </div>
       </div>
