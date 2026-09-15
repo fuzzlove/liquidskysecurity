@@ -1,0 +1,6 @@
+ca9e22d88e5e91e84942fbf02481a18be9f482c7b131eb06fd63481952003ad7  ./README.md
+742bf0fa427302bb7ded6ba4e11e6eef63f2f5dcc73f3dfa8507e8c74b1729e0  ./bin/device_bridge_supervisor
+9ed61048db6930df673b9ce7fd799ab51f1a8059dbde41fe5d6208572a2e29e6  ./launchagents/com.liquidskysecurity.crypstore-device-bridge.plist.in
+0703cfe817320705e1b7e8f0f20bdc59eb788767c12944592b1cc6bed10f4c8f  ./launchagents/com.liquidskysecurity.crypstore-usbmux.plist.in
+465a41b678304ea41e6d37d2cb128ede6143907abad6a9b92b814d53752cc39b  ./launchagents/com.liquidskysecurity.crypstore-worker.plist.in
+8b1310ecee3daa7b347403a601a82f7bd1404cda2d1a405977afa6f11b3f58fa  ./libexec/crypstore_worker.py
