@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">FocusFlow icon</title>
+  <desc id="desc">A minimalist focus ring with a calm task check mark.</desc>
+  <defs>
+    <linearGradient id="bg" x1="32" y1="24" x2="224" y2="232" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#172235"/>
+      <stop offset="1" stop-color="#071016"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="72" y1="56" x2="196" y2="204" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7ed9ff"/>
+      <stop offset="1" stop-color="#63e6be"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="56" fill="url(#bg)"/>
+  <circle cx="128" cy="126" r="72" fill="#101b27" stroke="url(#ring)" stroke-width="12"/>
+  <path d="M71 126a57 57 0 0 1 114 0" fill="none" stroke="#2a4252" stroke-width="10" stroke-linecap="round"/>
+  <path d="M91 121c11 10 26 10 37 0M128 121c11 10 26 10 37 0" fill="none" stroke="#dff8ef" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="128" cy="126" r="13" fill="#63e6be"/>
+  <circle cx="128" cy="126" r="31" fill="none" stroke="#dff8ef" stroke-width="6" stroke-opacity=".92"/>
+  <g transform="translate(159 159)">
+    <circle cx="24" cy="24" r="24" fill="#f7fff9"/>
+    <path d="M14 25.5 21.5 33 35 16" fill="none" stroke="#0f7b66" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FocusFlow | Focus Browser Extension, Daily Planner, and Minimalist Task Manager</title>
+    <meta name="description" content="Open your browser and know exactly what to do next. FocusFlow is a calm focus planner and task manager extension designed to support routines, goals, projects, and daily organization.">
+    <meta name="keywords" content="focus planner, task manager extension, productivity extension, daily planner, goal tracker, focus browser extension, routine planner, minimalist task manager, ADHD focus planner, browser productivity extension, attention management, daily organization, project planner, focus mode, stay organized, task tracking, personal productivity, goal planning">
+    <meta name="author" content="Joe M">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://liquidskysecurity.com/FocusFlow/">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="theme-color" content="#f7faf8" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#101820" media="(prefers-color-scheme: dark)">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="FocusFlow | Focus Browser Extension and Daily Planner">
+    <meta property="og:description" content="Open your browser and know exactly what to do next with a local-first planner for tasks, routines, projects, and goals.">
+    <meta property="og:url" content="https://liquidskysecurity.com/FocusFlow/">
+    <meta property="og:site_name" content="FocusFlow">
+    <meta property="og:image" content="https://liquidskysecurity.com/FocusFlow/store-assets/social-card-1200x630.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FocusFlow | Focus Browser Extension">
+    <meta name="twitter:description" content="Open your browser and know exactly what to do next. Local-first planning for tasks, routines, projects, and goals.">
+    <meta name="twitter:image" content="https://liquidskysecurity.com/FocusFlow/store-assets/social-card-1200x630.png">
+    <script>
+      (function () {
+        var stored = localStorage.getItem('focusflow-theme');
+        var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://liquidskysecurity.com/FocusFlow/#organization",
+            "name": "FocusFlow",
+            "url": "https://liquidskysecurity.com/FocusFlow/",
+            "founder": {"@type": "Person", "name": "Joe M"},
+            "sameAs": [
+              "https://github.com/fuzzlove",
+              "https://patreon.com/fuzzlove",
+              "https://buymeacoffee.com/fuzzlove"
+            ]
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://liquidskysecurity.com/FocusFlow/#product",
+            "name": "FocusFlow",
+            "applicationCategory": "ProductivityApplication",
+            "operatingSystem": "Chrome, Firefox, Microsoft Edge, Brave, Opera",
+            "description": "A browser productivity extension designed to support focus, routines, task tracking, projects, goals, and daily planning.",
+            "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+            "publisher": {"@id": "https://liquidskysecurity.com/FocusFlow/#organization"}
+          },
+          {
+            "@type": "Product",
+            "@id": "https://liquidskysecurity.com/FocusFlow/#focusflow-product",
+            "name": "FocusFlow",
+            "brand": {"@type": "Brand", "name": "FocusFlow"},
+            "category": "Browser productivity extension",
+            "description": "A minimalist task manager extension and focus planner designed to support daily planning, routines, projects, and goals.",
+            "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock"}
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://liquidskysecurity.com/FocusFlow/#faq",
+            "mainEntity": [
+              {"@type": "Question", "name": "What browsers are supported?", "acceptedAnswer": {"@type": "Answer", "text": "FocusFlow is designed for Chrome, Firefox, Microsoft Edge, Brave, and Opera."}},
+              {"@type": "Question", "name": "Does FocusFlow work offline?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Core planning and task features are designed to work locally in your browser."}},
+              {"@type": "Question", "name": "Is my data private?", "acceptedAnswer": {"@type": "Answer", "text": "FocusFlow uses a local-first approach, does not sell data, and does not use tracking by default."}},
+              {"@type": "Question", "name": "Can I export my tasks?", "acceptedAnswer": {"@type": "Answer", "text": "Export and backup options are planned for keeping your task data portable."}},
+              {"@type": "Question", "name": "Is there a free version?", "acceptedAnswer": {"@type": "Answer", "text": "FocusFlow is positioned with a free version for core focus and organization features."}},
+              {"@type": "Question", "name": "How is FocusFlow different?", "acceptedAnswer": {"@type": "Answer", "text": "FocusFlow emphasizes calm focus, low cognitive load, fast capture, accessibility options, and local-first storage over complex project management workflows."}}
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <nav class="nav shell" aria-label="Main navigation">
+        <a class="brand" href="#top" aria-label="FocusFlow home">
+          <img src="assets/focusflow-mark.svg" width="40" height="40" alt="">
+          <span>FocusFlow</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          <span class="sr-only">Toggle navigation</span>
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="#features">Features</a>
+          <a href="#privacy">Trust</a>
+          <a href="#screenshots">Screenshots</a>
+          <a href="#faq">FAQ</a>
+          <a href="privacy-policy.html">Privacy</a>
+        </div>
+        <div class="nav-actions">
+          <div class="theme-switcher" aria-label="Theme selection">
+            <button type="button" data-theme-choice="light" aria-pressed="false">Light</button>
+            <button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button>
+            <button type="button" data-theme-choice="focus" aria-pressed="false">Focus</button>
+          </div>
+          <a class="button button-small button-primary" href="#install">Install</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero section-pad" id="top">
+        <div class="shell hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Minimalist browser productivity extension</p>
+            <h1>Open your browser and know exactly what to do next.</h1>
+            <p class="hero-subhead">FocusFlow is a calm, local-first planner designed to support tasks, projects, goals, routines, and focused work without the clutter.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#install">Install FocusFlow</a>
+              <a class="button button-secondary" href="#demo">Watch the Demo</a>
+            </div>
+            <ul class="trust-row" aria-label="Trust indicators">
+              <li>Beta</li>
+              <li>No ads</li>
+              <li>Local-first</li>
+              <li>Works offline</li>
+            </ul>
+            <div class="browser-badges" aria-label="Supported browsers">
+              <span>Chrome</span>
+              <span>Firefox</span>
+              <span>Edge</span>
+              <span>Brave</span>
+              <span>Opera</span>
+            </div>
+          </div>
+          <div class="hero-visual" aria-label="FocusFlow browser extension screenshot">
+            <div class="browser-frame">
+              <div class="browser-top" aria-hidden="true">
+                <span></span><span></span><span></span>
+                <div></div>
+              </div>
+              <picture>
+                <source media="(max-width: 640px)" srcset="assets/screenshots/dashboard-mobile.png">
+                <img class="hero-screenshot" src="assets/screenshots/dashboard.png" width="1440" height="1000" alt="FocusFlow dashboard showing today tasks, attention anchors, and a calm planning workspace" fetchpriority="high">
+              </picture>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-strip" id="demo" aria-label="Product demo">
+        <div class="shell demo-grid">
+          <div>
+            <p class="eyebrow">Short demo</p>
+            <h2>Plan the day, pick one action, keep moving.</h2>
+          </div>
+          <div class="demo-steps">
+            <article><strong>1</strong><span>Capture tasks without leaving the browser.</span></article>
+            <article><strong>2</strong><span>Choose today’s anchors and routines.</span></article>
+            <article><strong>3</strong><span>Start Focus Mode when it is time to work.</span></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-pad problem">
+        <div class="shell split">
+          <div>
+            <p class="eyebrow">The daily friction</p>
+            <h2>Too Many Tasks. Not Enough Focus.</h2>
+          </div>
+          <div class="copy-block">
+            <p>Modern work scatters priorities across tabs, messages, documents, and half-finished lists. FocusFlow brings the next important action back into view with simple planning surfaces that are easy to return to.</p>
+            <ul class="check-list">
+              <li>Overwhelming task lists</li>
+              <li>Constant distractions</li>
+              <li>Forgotten priorities</li>
+              <li>Abandoned projects</li>
+              <li>Lack of structure</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-pad" id="features">
+        <div class="shell">
+          <div class="section-head">
+            <p class="eyebrow">Solution</p>
+            <h2>Built for Clarity</h2>
+            <p>Purposeful planning tools for people who want structure without turning productivity into another project.</p>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card"><span class="icon">◎</span><h3>Focus Mode</h3><p>Bring one selected task forward and reduce competing decisions.</p></article>
+            <article class="feature-card"><span class="icon">▦</span><h3>Projects</h3><p>Group related work so long-running efforts stay visible and organized.</p></article>
+            <article class="feature-card"><span class="icon">◇</span><h3>Goals</h3><p>Connect everyday actions to longer-term outcomes you care about.</p></article>
+            <article class="feature-card"><span class="icon">☼</span><h3>Daily Planning</h3><p>Start each day with a concise plan and a realistic set of priorities.</p></article>
+            <article class="feature-card"><span class="icon">⌖</span><h3>Attention Anchors</h3><p>Use lightweight reminders to return to the task you chose.</p></article>
+            <article class="feature-card"><span class="icon">↻</span><h3>Routine Builder</h3><p>Create repeatable checklists for planning, shutdown, study, or deep work.</p></article>
+            <article class="feature-card"><span class="icon">⦿</span><h3>Distraction Interceptor</h3><p>Pause before low-value context switches and choose the next step deliberately.</p></article>
+            <article class="feature-card"><span class="icon">Aa</span><h3>Accessibility Options</h3><p>Tune contrast, text size, motion, and interface density to match your preferences.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="focus-mode section-pad">
+        <div class="shell focus-grid">
+          <div class="focus-copy">
+            <p class="eyebrow">Focus Mode</p>
+            <h2>One task.<br>One decision.<br>One step forward.</h2>
+            <p>Focus Mode removes the extra surface area around your list and keeps the selected action centered, supported by a calm timer, progress cue, and quick completion controls.</p>
+          </div>
+          <div class="focus-panel" aria-label="Focus Mode mockup">
+            <div class="focus-orbit" aria-hidden="true"></div>
+            <div class="focus-task">
+              <span>Current focus</span>
+              <h3>Draft project outline</h3>
+              <p>25 minutes reserved</p>
+              <button type="button">Mark complete</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-pad">
+        <div class="shell">
+          <div class="section-head">
+            <p class="eyebrow">Why FocusFlow</p>
+            <h2>FocusFlow vs Traditional Task Managers</h2>
+          </div>
+          <div class="table-wrap" tabindex="0" aria-label="Comparison table">
+            <table>
+              <thead>
+                <tr><th scope="col">Capability</th><th scope="col">FocusFlow</th><th scope="col">Traditional Task Managers</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Simplicity</th><td>Calm, direct planning surfaces</td><td>Often layered with complex views</td></tr>
+                <tr><th scope="row">Focus-first design</th><td>Built around the next action</td><td>Usually list-first or database-first</td></tr>
+                <tr><th scope="row">Local-first storage</th><td>Tasks stay in your browser by default</td><td>Frequently cloud-account dependent</td></tr>
+                <tr><th scope="row">Cognitive load reduction</th><td>Prioritizes fewer choices at once</td><td>Can expose every option at once</td></tr>
+                <tr><th scope="row">Minimal distractions</th><td>Quiet interface and no ads</td><td>More notifications, upsells, or feeds</td></tr>
+                <tr><th scope="row">Fast capture</th><td>Quick browser-based task entry</td><td>May require switching apps</td></tr>
+                <tr><th scope="row">Accessibility</th><td>Readable, adjustable, keyboard-friendly</td><td>Varies by product and plan</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-pad accessibility">
+        <div class="shell split">
+          <div>
+            <p class="eyebrow">Accessibility</p>
+            <h2>Designed to Be Easier to Use</h2>
+          </div>
+          <div class="access-grid">
+            <span>Large text</span>
+            <span>Keyboard navigation</span>
+            <span>High contrast</span>
+            <span>Reduced motion</span>
+            <span>Simplified interface</span>
+            <span>Dyslexia-friendly options</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-pad privacy" id="privacy">
+        <div class="shell privacy-panel">
+          <div>
+            <p class="eyebrow">Privacy</p>
+            <h2>Your Tasks Stay Yours</h2>
+            <p>FocusFlow is designed around trust: private planning, clear controls, and no advertising business model.</p>
+          </div>
+          <ul class="privacy-list">
+            <li>Local-first task storage</li>
+            <li>No ads</li>
+            <li>No data selling</li>
+            <li>No tracking by default</li>
+            <li>Export and backup available</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section-pad" id="screenshots">
+        <div class="shell">
+          <div class="section-head">
+            <p class="eyebrow">Real extension screenshots</p>
+            <h2>See the Workspace Before You Install</h2>
+            <p>These screenshots are generated from the working FocusFlow extension UI so the website stays aligned with the product.</p>
+          </div>
+          <div class="screenshot-grid">
+            <figure class="screenshot-card">
+              <button type="button" data-lightbox-src="assets/screenshots/dashboard.png" data-lightbox-title="Dashboard" data-lightbox-alt="FocusFlow dashboard with today tasks, anchors, and progress overview">
+                <img src="assets/screenshots/dashboard.png" width="1440" height="1000" loading="lazy" alt="FocusFlow dashboard with today tasks, anchors, and progress overview">
+              </button>
+              <figcaption><strong>Dashboard</strong><span>Today tasks, anchors, and progress in one calm planning surface.</span></figcaption>
+            </figure>
+            <figure class="screenshot-card">
+              <button type="button" data-lightbox-src="assets/screenshots/focus-mode.png" data-lightbox-title="Focus Mode" data-lightbox-alt="FocusFlow Focus Mode showing one selected task and timer controls">
+                <img src="assets/screenshots/focus-mode.png" width="1440" height="1000" loading="lazy" alt="FocusFlow Focus Mode showing one selected task and timer controls">
+              </button>
+              <figcaption><strong>Focus Mode</strong><span>One chosen task, a timer, and simple completion controls.</span></figcaption>
+            </figure>
+            <figure class="screenshot-card">
+              <button type="button" data-lightbox-src="assets/screenshots/projects.png" data-lightbox-title="Projects" data-lightbox-alt="FocusFlow projects view organizing browser store launch tasks">
+                <img src="assets/screenshots/projects.png" width="1440" height="1000" loading="lazy" alt="FocusFlow projects view organizing browser store launch tasks">
+              </button>
+              <figcaption><strong>Projects</strong><span>Keep active work grouped without a heavyweight project system.</span></figcaption>
+            </figure>
+            <figure class="screenshot-card">
+              <button type="button" data-lightbox-src="assets/screenshots/goals.png" data-lightbox-title="Goals" data-lightbox-alt="FocusFlow goals view connecting planning work to long-term goals">
+                <img src="assets/screenshots/goals.png" width="1440" height="1000" loading="lazy" alt="FocusFlow goals view connecting planning work to long-term goals">
+              </button>
+              <figcaption><strong>Goals</strong><span>Connect daily planning to longer-term outcomes.</span></figcaption>
+            </figure>
+            <figure class="screenshot-card">
+              <button type="button" data-lightbox-src="assets/screenshots/routines.png" data-lightbox-title="Routine Builder" data-lightbox-alt="FocusFlow routine builder with morning planning and shutdown routines">
+                <img src="assets/screenshots/routines.png" width="1440" height="1000" loading="lazy" alt="FocusFlow routine builder with morning planning and shutdown routines">
+              </button>
+              <figcaption><strong>Routine Builder</strong><span>Create repeatable planning, shutdown, study, or deep-work routines.</span></figcaption>
+            </figure>
+            <figure class="screenshot-card">
+              <button type="button" data-lightbox-src="assets/screenshots/themes.png" data-lightbox-title="Theme Selection" data-lightbox-alt="FocusFlow settings showing light, dark, focus, and clarity theme controls">
+                <img src="assets/screenshots/themes.png" width="1440" height="1000" loading="lazy" alt="FocusFlow settings showing light, dark, focus, and clarity theme controls">
+              </button>
+              <figcaption><strong>Theme Selection</strong><span>Light, dark, focus, and clarity options for different work contexts.</span></figcaption>
+            </figure>
+            <figure class="screenshot-card">
+              <button type="button" data-lightbox-src="assets/screenshots/distraction-interceptor.png" data-lightbox-title="Distraction Interceptor" data-lightbox-alt="FocusFlow distraction interceptor reminding the user of the planned focus task">
+                <img src="assets/screenshots/distraction-interceptor.png" width="1440" height="1000" loading="lazy" alt="FocusFlow distraction interceptor reminding the user of the planned focus task">
+              </button>
+              <figcaption><strong>Distraction Interceptor</strong><span>A brief pause before opening sites you marked as distracting.</span></figcaption>
+            </figure>
+            <figure class="screenshot-card">
+              <button type="button" data-lightbox-src="assets/screenshots/new-tab.png" data-lightbox-title="New Tab" data-lightbox-alt="FocusFlow new tab page with anchors, focus task, routine, and quick capture">
+                <img src="assets/screenshots/new-tab.png" width="1440" height="1000" loading="lazy" alt="FocusFlow new tab page with anchors, focus task, routine, and quick capture">
+              </button>
+              <figcaption><strong>New Tab</strong><span>See anchors and quick capture every time a new tab opens.</span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-pad testimonials">
+        <div class="shell">
+          <div class="section-head">
+            <p class="eyebrow">Early feedback</p>
+            <h2>Built for Real Workdays</h2>
+          </div>
+          <div class="testimonial-grid">
+            <figure><blockquote>FocusFlow feels calmer than the tools I usually try. I can plan the day without rebuilding my whole system.</blockquote><figcaption>Product designer, remote team</figcaption></figure>
+            <figure><blockquote>The focus screen helps me stop negotiating with my task list. I choose the next step and keep moving.</blockquote><figcaption>Graduate student</figcaption></figure>
+            <figure><blockquote>I like that it stays in the browser and does not ask me to manage another bloated workspace.</blockquote><figcaption>Independent consultant</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-pad faq" id="faq">
+        <div class="shell">
+          <div class="section-head">
+            <p class="eyebrow">FAQ</p>
+            <h2>Questions Before You Install</h2>
+          </div>
+          <div class="faq-list">
+            <details><summary>What browsers are supported?</summary><p>FocusFlow supports Chrome, Firefox, Microsoft Edge, Brave, and Opera.</p></details>
+            <details><summary>Does FocusFlow work offline?</summary><p>Yes. Core task planning and organization features are designed to work locally in your browser.</p></details>
+            <details><summary>Is my data private?</summary><p>FocusFlow is local-first, has no ads, does not sell data, and does not track by default.</p></details>
+            <details><summary>Can I export my tasks?</summary><p>Yes. Export and backup options are available so you can keep your planning data portable.</p></details>
+            <details><summary>Is there a free version?</summary><p>FocusFlow includes a free version for core planning, focus, and organization workflows.</p></details>
+            <details><summary>How is FocusFlow different?</summary><p>FocusFlow is a focus-first browser productivity extension built for low cognitive load, fast capture, simple routines, accessibility, and local-first task management.</p></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta section-pad" id="install">
+        <div class="shell final-panel">
+          <p class="eyebrow">Ready when you are</p>
+          <h2>Start Focusing Today</h2>
+          <p>Install FocusFlow for a quieter way to plan tasks, track goals, and return to the work that matters. Store listings are prepared for Chrome, Edge, Firefox, Opera, and Brave-compatible Chromium browsers.</p>
+          <div class="install-grid" aria-label="Browser install options">
+            <a href="https://chromewebstore.google.com/detail/focusflow/dfdeghipgcjgjapkfabijbjjcahhnngj" rel="noopener"><strong>Chrome</strong><span>Install or sideload</span></a>
+            <a href="https://github.com/fuzzlove/FocusFlow" rel="noopener"><strong>Edge</strong><span>Add-on ready</span></a>
+            <a href="https://github.com/fuzzlove/FocusFlow" rel="noopener"><strong>Firefox</strong><span>Extension build</span></a>
+            <a href="https://github.com/fuzzlove/FocusFlow" rel="noopener"><strong>Brave</strong><span>Chrome compatible</span></a>
+            <a href="https://github.com/fuzzlove/FocusFlow" rel="noopener"><strong>Opera</strong><span>Opera build</span></a>
+          </div>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://github.com/fuzzlove/FocusFlow" rel="noopener" aria-label="Install FocusFlow extension">Install Extension</a>
+            <a class="button button-secondary" href="https://github.com/fuzzlove/FocusFlow/releases" rel="noopener">Changelog</a>
+            <a class="button button-secondary" href="mailto:hello@liquidskysecurity.com">Support</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <a class="brand" href="#top" aria-label="FocusFlow home">
+            <img src="assets/focusflow-mark.svg" width="36" height="36" alt="">
+            <span>FocusFlow</span>
+          </a>
+          <p>Made by Joe M</p>
+        </div>
+        <nav aria-label="Footer links">
+          <a href="https://patreon.com/fuzzlove" rel="noopener">Patreon</a>
+          <a href="https://github.com/fuzzlove" rel="noopener">GitHub</a>
+          <a href="https://buymeacoffee.com/fuzzlove" rel="noopener">Buy Me A Coffee</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms</a>
+          <a href="mailto:hello@liquidskysecurity.com">Contact</a>
+        </nav>
+      </div>
+    </footer>
+
+    <a class="sticky-install" href="#install">Install FocusFlow</a>
+    <div class="lightbox" hidden role="dialog" aria-modal="true" aria-label="Screenshot preview">
+      <button class="lightbox-close" type="button" aria-label="Close screenshot preview">Close</button>
+      <figure>
+        <img src="" alt="">
+        <figcaption></figcaption>
+      </figure>
+    </div>
+    <script src="app.js" defer></script>
+  </body>
+</html>

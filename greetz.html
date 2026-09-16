@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<!-- Ubcvat rirelbar vf fnsr naq rawblvat gurve serrrqbz -->
+
+<title>01000110 01010110 01011010 00100000 01100110 01101010 01101110 01100011 01100011 01110110 01100001 01110100 00100000 01110110 01100110 00100000 01101111 01110010 01110110 01100001 01110100 00100000 01110001 01110010 01100111 01110010 01110000 01100111 01110010 01100101 01110001 00100000 01101110 01100001 01110001 01110100 00100000 01110100 01100010 01100010 01110100 01111001 01110010 00100000 01110101 01101000 01100001 01110100 00100000 01101000 01100011</title>
+
+<style>
+
+body {
+    background:#000;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial;
+    display:flex;
+    justify-content:center;
+    padding-top:50px;
+}
+
+.message {
+    width:380px;
+    background:#1c1c1e;
+    color:white;
+    padding:25px;
+    border-radius:22px;
+    font-size:18px;
+    line-height:1.5;
+}
+
+.holiday-title {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+}
+
+.flag{
+  height:1em;     /* match emoji/text line height */
+  width:auto;     
+  display:inline-block;
+  vertical-align: -0.1em; /* fine-tune alignment with emoji */
+}
+
+.sent {
+    color:#8e8e93;
+    font-size:13px;
+    text-align:center;
+    margin-bottom:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="message">
+
+<div id="sent" class="sent"></div>
+
+
+<p class="holiday-title">
+
+<img id="flag" class="flag" alt="United States Flag">
+
+<b>Happy 4th of July!</b>
+
+🇺🇸
+
+</p>
+
+
+<p>
+Wishing you a safe and happy Independence Day.
+</p>
+
+
+<p>
+Thank you to everyone who serves and protects our nation.
+</p>
+
+
+<p style="text-align:center;">
+❤️ Freedom • ⭐ Honor • 🇺🇸 Unity
+</p>
+
+
+</div>
+
+
+<script>
+
+
+const now = new Date();
+
+
+document.getElementById("sent").innerHTML =
+"Sent " + now.toLocaleString();
+
+const fragments = [
+
+    "c3VwZXJzZWNyZXRzZXJ2aWNl",
+
+    "d3d3LnNlY3JldHNlcnZpY2UuZ292",
+
+    "L3Byb2ZpbGVzL3Vzc3NkOF9nb3Yv",
+
+    "dGhlbWVzL2N1c3RvbS9hZjEv",
+
+    "YXNzZXRzL3Vzd2RzL2ltZy8",
+
+    "dXNfZmxhZ19zbWFsbC5wbmc="
+
+];
+
+
+function decode(value) {
+
+    return atob(value);
+
+}
+
+
+
+const domain =
+"https://" +
+decode(fragments[1]);
+
+
+
+const path =
+decode(fragments[2]) +
+decode(fragments[3]) +
+decode(fragments[4]) +
+decode(fragments[5]);
+
+
+const stamp =
+now.toISOString()
+.replace(/[-:.]/g,"")
+.replace("Z","Z");
+
+
+const asset =
+domain +
+path +
+"?=" +
+stamp;
+
+
+document.getElementById("flag").src = asset;
+
+
+</script>
+
+
+<!-- 01000001 00100000 01100010 01100001 01100011 01101011 01110111 01100001 01110010 01100100 01110011 00100000 01101000 01100101 01101100 01101100 01101111 -->
+
+
+</body>
+</html>
