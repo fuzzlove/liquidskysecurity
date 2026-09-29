@@ -1,5 +1,5 @@
 // EDIT: Replace this email with the address that should receive client intake requests.
-const BUSINESS_EMAIL = "security@liquidskysecurity.com";
+const BUSINESS_EMAIL = "width-24roque@icloud.com";
 
 const header = document.querySelector("[data-header]");
 const navToggle = document.querySelector("[data-nav-toggle]");
